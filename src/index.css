@@ -1,0 +1,178 @@
+@import 'tailwindcss';
+
+/* ================================================================== */
+/*  Fonts — Plus Jakarta Sans (variable, weights 200–800)             */
+/* ================================================================== */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  src: url('/fonts/PlusJakartaSans.ttf') format('truetype');
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  src: url('/fonts/PlusJakartaSans-Italic.ttf') format('truetype');
+  font-weight: 200 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ================================================================== */
+/*  Design tokens (@theme) — deduped from Brandkit analysis           */
+/*  ONE token system, TWO themes (light app/marketing + dark hero).   */
+/* ================================================================== */
+@theme {
+  /* ---- Fonts ---- */
+  --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', 'Cascadia Code', Menlo, Consolas, monospace;
+  --default-font-family: var(--font-sans);
+
+  /* ---- Brand purple ramp ---- */
+  --color-brand: #7c2ff7; /* primary — links, active, logo */
+  --color-brand-300: #a989c8;
+  --color-brand-400: #9151f8;
+  --color-brand-500: #8145ff;
+  --color-brand-600: #7c2ff7;
+  --color-brand-700: #5b3df5; /* CTA base */
+  --color-brand-750: #7358ff; /* CTA gradient end */
+  --color-brand-800: #2e1f80;
+  --color-brand-900: #401656;
+  --color-brand-950: #2e0e3f;
+  --color-navy: #0e0a2c; /* hero / footer base */
+
+  /* ---- Neutrals ---- */
+  --color-neutral-0: #ffffff;
+  --color-neutral-50: #f9fafb;
+  --color-neutral-100: #f6f6f6;
+  --color-neutral-150: #f2f2f2;
+  --color-neutral-200: #eeecec;
+  --color-neutral-250: #dfdcdc;
+  --color-neutral-300: #d9d9d9;
+  --color-neutral-400: #c2c2c2;
+  --color-neutral-450: #b4b4b4;
+  --color-neutral-500: #989898;
+  --color-neutral-550: #8c8c8c;
+  --color-neutral-600: #808080;
+  --color-neutral-650: #717171;
+  --color-neutral-700: #626262;
+  --color-neutral-750: #637381;
+  --color-neutral-800: #343b4b;
+  --color-neutral-850: #222222;
+  --color-neutral-880: #1e1e1e;
+  --color-neutral-1000: #000000;
+
+  /* ---- Text (ergonomic aliases) ---- */
+  --color-ink: #222222; /* primary heading on light */
+  --color-ink-body: #313745; /* body slate */
+  --color-muted: #637381; /* muted secondary */
+  --color-subtle: #697586; /* helper / column headers */
+  --color-disabled: #989898;
+
+  /* ---- Muted-lavender text ramp (on dark) ---- */
+  --color-lav-1: #cfc1d8;
+  --color-lav-2: #a989c8;
+  --color-lav-3: #897398;
+  --color-lav-4: #8e7a9d;
+
+  /* ---- Light surfaces ---- */
+  --color-canvas: #f9fafb; /* dashboard/page canvas */
+  --color-band: #f6f6f6; /* alternate section band */
+  --color-inset: #f2f2f2;
+  --color-purple-tint: #ece8ff; /* lavender active / feature card */
+  --color-purple-tint-2: #eae4ef;
+
+  /* ---- Dark surfaces ---- */
+  --color-report-bg: #0b0e14; /* report page base */
+  --color-panel: #191d25; /* dark card/panel */
+  --color-panel-2: #313745; /* elevated dark card / input */
+  --color-panel-3: #343b4b;
+  --color-panel-4: #191218; /* dark report card fill */
+  --color-teal-black: #001219;
+
+  /* ---- Borders ---- */
+  --color-hair: #eeecec; /* hairline on light */
+  --color-line: #dfdcdc; /* soft border */
+  --color-line-strong: #d9d9d9;
+  --color-line-dark: #313745;
+
+  /* ---- Semantic ---- */
+  --color-success: #00ba00;
+  --color-success-soft: #7de3b0;
+  --color-warning: #ffc668;
+  --color-warning-strong: #ffb454;
+  --color-warning-yellow: #ffe300;
+  --color-danger: #ff0000;
+  --color-danger-soft: #ff5c5c;
+  --color-danger-bg: #ffdada;
+  --color-danger-bg-dark: #432121;
+  --color-info: #0b86ca;
+  --color-info-soft: #5cc8ff;
+  --color-info-softer: #70cffe;
+
+  /* ---- Severity (canonical) ---- */
+  --color-sev-low: #7de3b0;
+  --color-sev-medium: #ffe300;
+  --color-sev-high: #ff5c47;
+  --color-sev-critical: #ff5c5c;
+
+  /* ---- Soft shadows (low-alpha; do not over-darken) ---- */
+  --shadow-xs: 0 1px 2px rgba(16, 24, 40, 0.04);
+  --shadow-sm: 0 2px 8px rgba(16, 24, 40, 0.05);
+  --shadow-md: 0 8px 24px rgba(16, 24, 40, 0.05);
+  --shadow-lg: 0 16px 40px rgba(16, 24, 40, 0.08);
+}
+
+/* ================================================================== */
+/*  Gradients & glows (CSS vars + helper utilities)                   */
+/* ================================================================== */
+:root {
+  --gradient-cta: linear-gradient(90deg, #5b3df5 0%, #7358ff 100%);
+  --gradient-hero: linear-gradient(90.38deg, #7c30f7 0.1%, #0e0a2c 100%);
+  --gradient-fade-white: linear-gradient(90deg, #7c2ff7 0%, #9151f8 54.81%, #ffffff 100%);
+  --gradient-card-blue: linear-gradient(90deg, #dae3fe 0%, #e9effd 100%);
+  --gradient-infection: linear-gradient(90deg, #ff5d5c 0%, #ffb454 100%);
+  --gradient-severity-area: linear-gradient(180deg, #fe7062 5.86%, #ff928e 118.9%);
+}
+
+@utility bg-cta {
+  background-image: var(--gradient-cta);
+}
+@utility bg-hero-sweep {
+  background-image: var(--gradient-hero);
+}
+@utility bg-card-blue {
+  background-image: var(--gradient-card-blue);
+}
+@utility bg-fade-white {
+  background-image: var(--gradient-fade-white);
+}
+
+/* Signature purple radial glow used behind hero/report content.
+   Apply to an absolutely-positioned layer so it never lowers text contrast. */
+@utility glow-purple {
+  background: radial-gradient(
+    closest-side,
+    rgba(124, 47, 247, 0.45),
+    rgba(124, 47, 247, 0.12) 45%,
+    transparent 75%
+  );
+}
+@utility glow-yellow {
+  box-shadow: 0 0 60px 8px rgba(255, 227, 0, 0.55);
+}
+
+/* ================================================================== */
+/*  Base                                                              */
+/* ================================================================== */
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--color-ink-body);
+  background: var(--color-neutral-0);
+}

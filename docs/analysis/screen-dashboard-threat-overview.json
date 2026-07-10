@@ -1,0 +1,390 @@
+{
+  "screen": "dashboard-threat-overview",
+  "surface": "dashboard",
+  "exportDimensions": "2344x3200 px as-read (≈2x); CSS ≈ 1172x1600 px. Divide all raw measurements below by 2 for CSS px.",
+  "layoutSummary": "Fixed left sidebar (~250px CSS wide, white with subtle right border/shadow) + main content area on a very light gray page (#F6F6F6 / #F9FAFB). Main area: sticky-feel top header row (page title left, support/bell/avatar right), then a horizontal tab bar with a purple active underline, then a vertically stacked sequence of report sections. Each section = bold section heading + one-line muted description + a grid of white rounded chart/list cards. Card grids alternate between an asymmetric 2-col split (wide chart card ~64% + narrow card ~34%) for General Summary, a full-width card for Events by severity, and even 50/50 two-col splits for Leaked Data and Domain Squatting. Generous vertical rhythm (~32-40px CSS between sections), ~24px gutters between cards.",
+  "sections": [
+    {
+      "name": "Sidebar / Left Navigation",
+      "description": "Full-height white vertical nav, ~250px CSS wide. Top: purple shield-logo mark + 'purevpn' wordmark (mark is purple #5B3DF5/#7C30F7). Below: 'Team Name' caption + 'Bending Spoons' bold, with a circular collapse chevron button (‹) floating on the sidebar's right edge. A thin divider separates the team block. Then two groups of nav items separated by dividers: group 1 = Dashboard, Setup VPN, Downloads, Manual Configuration; group 2 = Identity Protection (ACTIVE), Remove my Data, Password Manager; group 3 = Profile Settings, Subscription, Feedback. Each item = leading line-icon + label. Active item (Identity Protection) has a light lavender pill background (#ECE8FF) with purple text/icon (#5B3DF5) and a thin purple left accent bar. Inactive items are muted gray (#637381/#717171). Bottom: an 'Upgrade Plan' promo card with a gold crown icon, gold gradient background (#FFC668 / #FFE9C-ish), and a '-20%' pill badge.",
+      "layout": "fixed sidebar, vertically stacked item list with grouped dividers",
+      "components": [
+        "Logo lockup",
+        "Team switcher block",
+        "Collapse button",
+        "Sidebar nav item (active/inactive)",
+        "Divider",
+        "Upgrade Plan promo card",
+        "Discount pill"
+      ],
+      "keyColors": [
+        "#FFFFFF",
+        "#ECE8FF",
+        "#5B3DF5",
+        "#637381",
+        "#717171",
+        "#191D25",
+        "#FFC668"
+      ],
+      "notes": "Active pill only spans item width with rounded corners; icons are 2px stroke line style ~20px."
+    },
+    {
+      "name": "Top Header Bar",
+      "description": "Row above the tab bar. Left: page title 'Identity theft protection' in large bold near-black. Right cluster: 'Live Support' text with a chat-bubble icon, a notification bell icon with a small red unread dot, and a circular avatar showing initials 'SA' on a light lavender fill with purple text.",
+      "layout": "space-between row, title left / actions right",
+      "components": [
+        "Page title (H1)",
+        "Live Support link+icon",
+        "Notification bell w/ badge dot",
+        "Avatar chip"
+      ],
+      "keyColors": [
+        "#222222",
+        "#637381",
+        "#FF0000",
+        "#ECE8FF",
+        "#5B3DF5"
+      ],
+      "notes": "Avatar ~36px CSS circle; bell dot is a tiny red circle top-right of the bell."
+    },
+    {
+      "name": "Tab Bar",
+      "description": "Horizontal tab navigation directly under the header, separated from content by a full-width hairline. Tabs left-aligned with icon+label each: 'Threat overview' (shield, ACTIVE), 'Monitored assets' (stacked layers), 'Employee exposure' (people), 'Domain squatting' (link/chain), 'Alerts & settings' (gear). Active tab has near-black text and a 2px purple underline bar (#5B3DF5) beneath it; inactive tabs are muted gray with gray icons.",
+      "layout": "horizontal inline tab list with bottom border + active underline",
+      "components": [
+        "Tab item (active/inactive)",
+        "Tab underline indicator",
+        "Bottom hairline divider"
+      ],
+      "keyColors": [
+        "#5B3DF5",
+        "#191D25",
+        "#637381",
+        "#EEECEC"
+      ],
+      "notes": "Underline sits on the shared bottom border; only under the active label width."
+    },
+    {
+      "name": "General Summary (section)",
+      "description": "Section heading 'General Summary' (bold) + muted one-line description 'A high-level overview of the security assessment findings, overall risk posture, and key recommendations.' Below: a 2-col asymmetric grid. LEFT (wide) card 'Unresolved comments' with an info (i) icon, a 4-item colored-dot legend (Low green, Medium yellow, High orange, Critical red), and a multi-line chart. RIGHT (narrow) card 'Days unresolved' with (i) icon, same 4-color legend (note Low here is BLUE), and a 2x2-ish stat grid: '8 Days / Critical Events' (red label), '6 Days / Low Events' (green label), '6 Days / High Events', '3 Days / Medium Events' (yellow label), separated by hairlines.",
+      "layout": "2-col split ~64/34, gap ~24px",
+      "components": [
+        "Section heading",
+        "Section description",
+        "Chart card",
+        "Line chart",
+        "Legend row",
+        "Stat card",
+        "Stat block (number + colored label)"
+      ],
+      "keyColors": [
+        "#FFFFFF",
+        "#191D25",
+        "#637381",
+        "#00BA00",
+        "#FFC668",
+        "#FFB454",
+        "#FF5C5C",
+        "#5CC8FF"
+      ],
+      "notes": "Card corner radius ~16px CSS; subtle card shadow; internal padding ~20-24px."
+    },
+    {
+      "name": "Events by severity (section card)",
+      "description": "Full-width white card. Title 'Events by severity' + (i) icon, 4-dot legend (Low green, Medium yellow, High orange, Critical red). Body is a large smooth stacked gradient AREA chart: rolling smooth curves, green-tinted band at bottom rising into yellow/orange humps mid-chart and a dominant warm red/coral gradient fill dominating the right half. Y axis 0-1000 (labels 0,250,500,500,750,1000 — note duplicate 500 in export), x axis single label '900' at left. Soft vertical gradient fades to transparent at the bottom of each band.",
+      "layout": "full-width single card",
+      "components": [
+        "Chart card",
+        "Stacked area/stream chart",
+        "Legend row",
+        "Y-axis ticks"
+      ],
+      "keyColors": [
+        "#7DE3B0",
+        "#00BA00",
+        "#FFC668",
+        "#FFB454",
+        "#FF928E",
+        "#FF5C5C",
+        "#FE7062"
+      ],
+      "notes": "Areas use vertical (180deg) gradients fading to ~0 opacity at baseline; curves are monotone/smooth (Catmull-Rom feel), overlapping semi-transparent bands."
+    },
+    {
+      "name": "Leaked Data (section)",
+      "description": "Heading 'Leaked Data' + description 'Details on exposed credentials, sensitive files, and other data found leaked across public sources.' Below: even 2-col grid. LEFT card 'Total amount of events' + (i), legend (Combo List orange, Exposed purple, Info Stealer red) — a vertical BAR chart over weekdays Mon-Sun, y-axis 0-60k (10k steps). Bars use gradient fills: tall red-orange gradient bars (Wed/Thr peak ~55k-44k) and a shorter purple bar (Sat ~19k). RIGHT card 'Leaked data top unresolved events' + (i), a 4-dot severity legend, then a list of rows: name (bold) + subtext (breach source, muted, truncated e.g. 'RockYou20…', 'SWVL Brea…', 'Adsqua…') with a right-aligned severity pill (Low=green, High=orange, Critical=red).",
+      "layout": "2-col split ~50/50, gap ~24px",
+      "components": [
+        "Chart card",
+        "Vertical bar chart",
+        "List card",
+        "List row (name+subtext+badge)",
+        "Severity badge/pill",
+        "Legend row"
+      ],
+      "keyColors": [
+        "#FF5D5C",
+        "#FFB454",
+        "#8145FF",
+        "#7C30F7",
+        "#00BA00",
+        "#191D25",
+        "#637381"
+      ],
+      "notes": "Bars have rounded top corners and a top-to-bottom gradient (red→orange 'linear-gradient(90deg,#FF5D5C,#FFB454)'; purple bar #8145FF/#7C30F7). Rows separated by hairlines."
+    },
+    {
+      "name": "Domain Squatting (section)",
+      "description": "Heading 'Domain Squatting' + description 'Details on lookalike domains registered by third parties that may be used for phishing or brand impersonation.' Even 2-col grid. LEFT card 'Unresolved Events' + (i), legend (Combo List yellow, Exposed Credentials orange, Infostealers red) — a single wide horizontal STACKED bar spanning the chart: red top segment, orange middle, yellow bottom, y-axis 0-1000, x-axis 0-900. RIGHT card 'Leaked data top unresolved rvents' (sic) + (i), 4-dot legend, list of lookalike domains: 'purevpm.com / 91% similari…' (Critical), 'purevpn.us / 80% similari…' (Critical), 'purevpnn.io / 75% similari…' (High), 'pvreupn.com / 75% similari…' (Medium) — each domain bold + muted similarity subtext + right severity pill.",
+      "layout": "2-col split ~50/50, gap ~24px",
+      "components": [
+        "Chart card",
+        "Horizontal stacked bar",
+        "List card",
+        "Domain list row",
+        "Severity badge/pill",
+        "Legend row"
+      ],
+      "keyColors": [
+        "#FF0000",
+        "#FF5C47",
+        "#FFB454",
+        "#EFE064",
+        "#FFC668",
+        "#191D25",
+        "#637381"
+      ],
+      "notes": "Note the 'rvents' typo and duplicate y-axis '500' labels are in the source export — replicate for pixel fidelity if faithful to Figma. Stacked bar segments are flat saturated colors (no gradient), full radius on outer corners."
+    }
+  ],
+  "typography": [
+    {
+      "role": "headline / page title (H1)",
+      "approxSizePx": "30px",
+      "weight": "700",
+      "colorHex": "#222222"
+    },
+    {
+      "role": "section heading (H2)",
+      "approxSizePx": "20px",
+      "weight": "700",
+      "colorHex": "#191D25"
+    },
+    {
+      "role": "section description / subhead",
+      "approxSizePx": "14px",
+      "weight": "400",
+      "colorHex": "#637381"
+    },
+    {
+      "role": "card title",
+      "approxSizePx": "15px",
+      "weight": "600",
+      "colorHex": "#313745"
+    },
+    {
+      "role": "stat number (e.g. '8 Days')",
+      "approxSizePx": "22px",
+      "weight": "700",
+      "colorHex": "#191D25"
+    },
+    {
+      "role": "stat label (e.g. 'Critical Events')",
+      "approxSizePx": "12px",
+      "weight": "500",
+      "colorHex": "#FF5C5C (semantic per severity)"
+    },
+    {
+      "role": "list row title (name/domain)",
+      "approxSizePx": "14px",
+      "weight": "600",
+      "colorHex": "#191D25"
+    },
+    {
+      "role": "list row subtext (breach/similarity)",
+      "approxSizePx": "12px",
+      "weight": "400",
+      "colorHex": "#637381"
+    },
+    {
+      "role": "nav item label",
+      "approxSizePx": "14px",
+      "weight": "500",
+      "colorHex": "#637381 (active #5B3DF5)"
+    },
+    {
+      "role": "tab label",
+      "approxSizePx": "14px",
+      "weight": "500",
+      "colorHex": "#637381 (active #191D25)"
+    },
+    {
+      "role": "legend label",
+      "approxSizePx": "12px",
+      "weight": "500",
+      "colorHex": "#637381"
+    },
+    {
+      "role": "chart axis tick / caption",
+      "approxSizePx": "11px",
+      "weight": "400",
+      "colorHex": "#8C8C8C"
+    },
+    {
+      "role": "badge/pill text",
+      "approxSizePx": "11px",
+      "weight": "600",
+      "colorHex": "semantic (green/orange/red on tinted bg)"
+    },
+    {
+      "role": "team caption ('Team Name')",
+      "approxSizePx": "11px",
+      "weight": "400",
+      "colorHex": "#8C8C8C"
+    }
+  ],
+  "reusableComponents": [
+    {
+      "name": "SidebarNavItem",
+      "description": "Leading line-icon + label row, rounded pill hover/active state",
+      "variants": "default (muted), active (lavender #ECE8FF pill + purple text + left accent bar), hover"
+    },
+    {
+      "name": "UpgradePlanCard",
+      "description": "Gold-gradient promo card with crown icon, label, and discount pill",
+      "variants": "single (with -20% badge)"
+    },
+    {
+      "name": "Tab",
+      "description": "Icon+label tab with active purple underline",
+      "variants": "active (dark text + purple underline), inactive (muted)"
+    },
+    {
+      "name": "Avatar",
+      "description": "Circular initials chip",
+      "variants": "initials on lavender fill (SA); could support image"
+    },
+    {
+      "name": "IconButton",
+      "description": "Bare icon action (bell, live support, collapse chevron)",
+      "variants": "plain, with-badge-dot"
+    },
+    {
+      "name": "SectionHeader",
+      "description": "Bold H2 + muted one-line description",
+      "variants": "standard"
+    },
+    {
+      "name": "ChartCard",
+      "description": "White rounded card: title + (i) info icon + optional legend row + chart body",
+      "variants": "with-legend, without-legend, full-width, half-width"
+    },
+    {
+      "name": "LegendRow",
+      "description": "Inline colored-dot + label items",
+      "variants": "4-severity (Low/Medium/High/Critical), 3-category (Combo List/Exposed/Info Stealer)"
+    },
+    {
+      "name": "StatBlock",
+      "description": "Large number ('N Days') over a small colored semantic label",
+      "variants": "critical(red), high(gray/orange), medium(yellow), low(green)"
+    },
+    {
+      "name": "ListRow",
+      "description": "Title + muted subtext on left, severity badge right-aligned, hairline separator",
+      "variants": "person (name+breach), domain (domain+similarity)"
+    },
+    {
+      "name": "SeverityBadge",
+      "description": "Rounded pill with leading dot + label on tinted bg",
+      "variants": "Low (green #00BA00 on #39D98A1F), Medium (yellow), High (orange #FFB454 on #FFC668-tint), Critical (red #FF5C5C on #FFDADA)"
+    },
+    {
+      "name": "InfoIcon",
+      "description": "Small circular (i) tooltip trigger next to card titles",
+      "variants": "default"
+    },
+    {
+      "name": "Divider",
+      "description": "Thin hairline separator (~#EEECEC/#DFDCDC)",
+      "variants": "sidebar-group, list-row, card-bottom"
+    }
+  ],
+  "charts": [
+    "Multi-line chart (Unresolved comments): 4 smooth-ish polylines — Low #00BA00, Medium #FFC668/#EFE064, High #FFB454, Critical #FF5C5C. Y 0-1000 (250 steps), X 0-900. Light gray gridlines, no fill.",
+    "Stat/metric card (Days unresolved): not a plotted chart — 4 StatBlocks; legend Low here is BLUE #5CC8FF.",
+    "Smooth stacked gradient area/stream chart (Events by severity): 4 overlapping semi-transparent bands with vertical fade-to-transparent gradients — green #7DE3B0→transparent (Low), yellow/gold #FFC668 (Medium), orange #FFB454 (High), coral/red #FF928E→#FF5C5C (Critical, dominant right side). Y 0-1000, X min label 900.",
+    "Vertical bar chart (Total amount of events / Leaked Data): weekday categories Mon-Sun, Y 0-60k (10k steps). Bars with rounded tops and gradient fills: red→orange 'linear-gradient(90deg,#FF5D5C 0%,#FFB454 100%)' for Combo List/Info Stealer, solid purple #8145FF/#7C30F7 for Exposed.",
+    "Horizontal stacked bar (Unresolved Events / Domain Squatting): one full-width bar, 3 flat segments — red #FF0000 (Infostealers, top), orange #FF5C47/#FFB454 (Exposed Credentials, middle), yellow #FFC668/#EFE064 (Combo List, bottom). Y 0-1000, X 0-900."
+  ],
+  "assetsNeeded": [
+    {
+      "name": "purevpn_logo.svg",
+      "type": "logo",
+      "note": "Purple shield mark + 'purevpn' wordmark; exists at Brandkit/logos/purevpn_logo.svg"
+    },
+    {
+      "name": "sidebar-icons",
+      "type": "icon-set",
+      "note": "Line icons: dashboard/grid, setup-vpn, downloads, manual-config, identity/face-scan, remove-data, password/lock, profile, subscription/receipt, feedback/chat"
+    },
+    {
+      "name": "tab-icons",
+      "type": "icon-set",
+      "note": "shield (Threat overview), stacked-layers (Monitored assets), people (Employee exposure), link/chain (Domain squatting), gear (Alerts & settings)"
+    },
+    {
+      "name": "header-icons",
+      "type": "icon-set",
+      "note": "chat-bubble (Live Support), bell (notifications), chevron-left (collapse)"
+    },
+    {
+      "name": "crown-icon",
+      "type": "icon",
+      "note": "Gold crown for Upgrade Plan card"
+    },
+    {
+      "name": "info-icon",
+      "type": "icon",
+      "note": "Circular (i) beside each card title"
+    },
+    {
+      "name": "avatar-SA",
+      "type": "avatar",
+      "note": "Initials chip 'SA' on lavender fill (dynamic/user)"
+    },
+    {
+      "name": "PlusJakartaSans",
+      "type": "font",
+      "note": "Plus Jakarta Sans weights 400/500/600/700 required"
+    }
+  ],
+  "fidelityNotes": [
+    "Card radius ~16px CSS; sidebar active pill & badges ~8-12px; badge pills fully rounded.",
+    "Cards are pure white on #F6F6F6/#F9FAFB page with a very soft, low-opacity drop shadow (subtle elevation, no hard border) — some cards also have a 1px near-transparent border.",
+    "Events-by-severity area chart is the trickiest: overlapping SEMI-TRANSPARENT bands each with a 180deg gradient fading to ~0% alpha at the baseline; smooth monotone curves; warm red band (#FF928E→#FF5C5C) dominates right half. Reference brand gradients: linear-gradient(180deg,#FE7062,#FF928E) and #FEBBBA→#FF928E family.",
+    "Bar-chart gradients are top-heavy vertical: red-orange 'linear-gradient(90deg,#FF5D5C,#FFB454)' (rendered vertically in bars) and solid purple; rounded top corners only.",
+    "Domain-squatting horizontal bar segments are FLAT saturated fills (red/orange/yellow), not gradient.",
+    "Severity badges: colored leading dot + label on a low-alpha tint of the same hue (e.g. Low green on #39D98A1F, Critical red on #FFDADA). Keep dot+text same hue family.",
+    "Active tab underline is a 2px purple (#5B3DF5) bar sitting on the shared bottom hairline (#EEECEC).",
+    "Sidebar active item: #ECE8FF pill + #5B3DF5 text/icon + thin purple left accent.",
+    "Upgrade Plan card uses a warm gold gradient (approx #FFC668 base) with a small solid discount pill.",
+    "Hairline dividers ~1px at #EEECEC/#DFDCDC; gridlines even lighter (#F2F2F2).",
+    "Chart axis labels are light gray (#8C8C8C) ~11px; note the source export has duplicate '500' y-labels and a 'rvents' typo — replicate only if strict pixel-fidelity is required, otherwise correct.",
+    "Notification bell has a tiny red (#FF0000) unread dot badge."
+  ],
+  "interactions": [
+    "Tabs: click switches Threat overview / Monitored assets / Employee exposure / Domain squatting / Alerts & settings; active gets purple underline.",
+    "Sidebar collapse: chevron (‹) button collapses/expands the sidebar (icon-only rail).",
+    "Sidebar nav: hover state on items; active route highlighted with lavender pill.",
+    "Info (i) icons: hover/click tooltip explaining each metric.",
+    "Chart legends: likely toggle series visibility on click; hover shows tooltips on data points/bars/areas.",
+    "List rows: hover highlight; badges are status indicators (possibly click-through to event detail).",
+    "Notification bell: opens notifications; unread dot state.",
+    "Live Support: opens chat widget.",
+    "Avatar: opens account/profile menu.",
+    "Upgrade Plan: CTA to billing/upgrade with -20% promo.",
+    "Days-unresolved / top-events lists may support sort or 'view all' expansion."
+  ],
+  "responsiveNotes": "Desktop (shown): fixed ~250px sidebar + fluid content with multi-column card grids. Tablet: collapse sidebar to an icon rail (the chevron already implies this); reduce asymmetric General Summary split toward stacking; keep two-col card grids until ~900px then stack. Mobile: sidebar becomes an off-canvas drawer (hamburger); header title shrinks (~22px) with actions condensing to icons; tab bar becomes horizontally scrollable; all card grids collapse to a single column full-width; charts keep aspect ratio and gain horizontal scroll or reduced tick density; legends wrap to multiple lines; stat 2x2 grid in Days-unresolved stacks to a single column; list rows keep name/subtext left with badge right (wrap badge below on very narrow widths)."
+}

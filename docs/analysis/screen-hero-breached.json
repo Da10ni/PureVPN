@@ -1,0 +1,331 @@
+{
+  "screen": "hero-breached (Hero variant B — \"Is your company Already Breached?\")",
+  "surface": "marketing",
+  "exportDimensions": "Export read at 2800x1744 px (≈2x). CSS layout ≈ 1400x872 px. All raw pixel figures below are divided by 2 for the CSS value; both stated where useful.",
+  "layoutSummary": "Single full-bleed hero section on a dark indigo→violet gradient, laid out as a rounded-corner \"card\" with ~24px inset from the viewport edge (the whole composition sits inside a big rounded rectangle with a hairline border). Two-column split: LEFT column (~46% width) is the content stack — headline, subhead, email+button capture bar, security reassurance line, micro-benefits row, and a \"TRUSTED BY\" label; RIGHT column (~50% width) is a large rounded grey image placeholder wrapped in a yellow glow. A full-width partner-logo strip sits pinned to the bottom, separated from the content above by a faint horizontal divider. Vertical rhythm in the left column is generous (32–48px gaps between blocks). Content left edge aligns at ~96px CSS from the card edge.",
+  "sections": [
+    {
+      "name": "Page frame / background",
+      "description": "Full-bleed dark hero wrapped in a large rounded rectangle (~24px radius) with a 1px translucent white hairline border. Background is a radial/linear purple gradient: deep near-black indigo at the outer/bottom edges brightening to a saturated blue-violet bloom in the upper-center/right. A soft lighter purple glow sits behind the top-right area.",
+      "layout": "full-bleed, single rounded container with ~24px outer padding",
+      "keyColors": [
+        "#0E0A2C",
+        "#2E1F80",
+        "#5B3DF5",
+        "#191218",
+        "#000000"
+      ],
+      "components": [
+        "RoundedPageContainer",
+        "GradientBackground",
+        "hairline border #FFFFFF at low opacity"
+      ],
+      "notes": "Gradient reads as a multi-stop radial bloom (bright violet ~#5B3DF5/#2E1F80 top-right center) fading to #0E0A2C at edges. Corners of the outer frame are clearly rounded on the export."
+    },
+    {
+      "name": "Headline block (left column)",
+      "description": "Three-line display headline: 'Is your' / 'company Already' / 'Breached?'. 'Is your company' and 'Breached?' are white; 'Already Breached?' is pure red. Very tight leading, heavy weight.",
+      "layout": "left-aligned, top of left column, starts ~x96 / ~y210 CSS",
+      "keyColors": [
+        "#FFFFFF",
+        "#FF0000"
+      ],
+      "components": [
+        "DisplayHeadline with inline colored span"
+      ],
+      "notes": "Word 'Already' (line 2 tail) + 'Breached?' (line 3) are red #FF0000. Line-height ~0.95–1.0. Approx 64px CSS / ~128px raw."
+    },
+    {
+      "name": "Subhead / supporting copy",
+      "description": "Two-line muted body paragraph: 'One scan shows every company login already leaked on the dark web — and exactly which systems they open.'",
+      "layout": "left-aligned below headline with ~large gap (~90px), max-width ~380px CSS so it wraps to 2 lines",
+      "keyColors": [
+        "#C2C2C2",
+        "#B4B4B4"
+      ],
+      "components": [
+        "BodyParagraph"
+      ],
+      "notes": "Light grey, regular weight, ~19px CSS. Em dash in copy."
+    },
+    {
+      "name": "Email capture bar",
+      "description": "A rounded, slightly translucent dark 'pill panel' containing a borderless email input ('Enter your business email' placeholder) on the left and a solid violet 'Scan Company Domain' button on the right.",
+      "layout": "horizontal, input flex-grows, button fixed width; outer panel has internal padding ~12px and rounded ~16px corners",
+      "keyColors": [
+        "#313745",
+        "#343B4B",
+        "#7C30F7",
+        "#5B3DF5",
+        "#FFFFFF"
+      ],
+      "components": [
+        "EmailCaptureBar (input + CTA button)"
+      ],
+      "notes": "Outer capture panel is a semi-transparent dark grey (~#313745 over gradient) with rounded corners and a subtle lighter inner edge. Placeholder text is muted grey #808080/#717171. Button is a saturated purple (#7C30F7 / gradient #5B3DF5→#7358FF) with white ~16px semibold label and ~12px radius."
+    },
+    {
+      "name": "Security reassurance line",
+      "description": "A green shield check icon followed by two lines of small muted text: 'No software to install and no network access required. We check your domain against dark web breach data externally — nothing ever touches your systems.'",
+      "layout": "icon + text row, icon top-left aligned, text wraps to 2 lines, ~24px below capture bar",
+      "keyColors": [
+        "#00BA00",
+        "#7DE3B0",
+        "#8C8C8C",
+        "#989898"
+      ],
+      "components": [
+        "IconTextReassurance (shield-check + caption)"
+      ],
+      "notes": "Shield-check icon is green (#00BA00 / #7DE3B0 outline). Text ~15px CSS, muted grey."
+    },
+    {
+      "name": "Micro-benefits row",
+      "description": "Single line of three benefits separated by bullet dots: 'Free for a limited time • No credit card • Your email is only used to send the report'.",
+      "layout": "inline row, dot separators, ~16px below reassurance line",
+      "keyColors": [
+        "#989898",
+        "#8C8C8C"
+      ],
+      "components": [
+        "BulletSeparatedList"
+      ],
+      "notes": "~15px CSS muted grey; middot separators with spacing."
+    },
+    {
+      "name": "TRUSTED BY label",
+      "description": "All-caps tracked-out label 'TRUSTED BY 5000+ TEAMS'.",
+      "layout": "left-aligned, ~40px below benefits row, sits just above the divider",
+      "keyColors": [
+        "#B4B4B4",
+        "#C2C2C2"
+      ],
+      "components": [
+        "EyebrowLabel (uppercase)"
+      ],
+      "notes": "Letter-spacing wide (~1.5px), semibold, ~15px CSS, light grey."
+    },
+    {
+      "name": "Hero image placeholder (right column)",
+      "description": "Large rounded grey rectangle (image/video placeholder) glowing bright yellow. The grey fill is a flat light neutral; the glow is a strong yellow outer halo plus a yellow ring/border on the placeholder.",
+      "layout": "right column, vertically centered on the hero content, roughly square (~640x570px CSS), ~24–28px corner radius",
+      "keyColors": [
+        "#D9D9D9",
+        "#EEECEC",
+        "#FFE300",
+        "#FFC668",
+        "#EFE064"
+      ],
+      "components": [
+        "GlowingImagePlaceholder"
+      ],
+      "notes": "Grey fill ~#D9D9D9/#EEECEC. Yellow: ring/border ~#FFE300 with a large diffuse outer glow (#FFE300 fading, ~#FFC668 warm mid). Glow is a big blur radius (~40–60px) all around, strongest on the bottom/right."
+    },
+    {
+      "name": "Divider",
+      "description": "Faint full-width horizontal hairline separating the content/trust label from the partner-logo strip.",
+      "layout": "full container width, ~1px, low opacity white",
+      "keyColors": [
+        "#FFFFFF80",
+        "#D9D9D933"
+      ],
+      "components": [
+        "HairlineDivider"
+      ],
+      "notes": "~10% white opacity line."
+    },
+    {
+      "name": "Partner logo strip",
+      "description": "Row of 7 monochrome (white/light-grey) partner logos evenly distributed across the full width, pinned near the bottom: Samsung, HelloRache, Sitecore, Hiive, Ruby Ribbon, KD_, Bending Spoons.",
+      "layout": "single horizontal row, space-between / justify-around, ~48px below divider",
+      "keyColors": [
+        "#FFFFFF",
+        "#C2C2C2",
+        "#B4B4B4"
+      ],
+      "components": [
+        "PartnerLogoRow (LogoItem x7)"
+      ],
+      "notes": "All logos desaturated to white/grey for uniformity; varying intrinsic widths, vertically centered on a shared baseline."
+    }
+  ],
+  "typography": [
+    {
+      "role": "headline",
+      "approxSizePx": "64px CSS (~128px raw)",
+      "weight": "800 (ExtraBold)",
+      "colorHex": "#FFFFFF with #FF0000 span",
+      "note": "Plus Jakarta Sans; line-height ~0.95; 3 lines"
+    },
+    {
+      "role": "subhead",
+      "approxSizePx": "19px CSS (~38px raw)",
+      "weight": "400 (Regular)",
+      "colorHex": "#C2C2C2",
+      "note": "max-width ~380px, wraps 2 lines"
+    },
+    {
+      "role": "button",
+      "approxSizePx": "16px CSS (~32px raw)",
+      "weight": "600 (SemiBold)",
+      "colorHex": "#FFFFFF",
+      "note": "CTA label 'Scan Company Domain'"
+    },
+    {
+      "role": "input-placeholder",
+      "approxSizePx": "16px CSS",
+      "weight": "400",
+      "colorHex": "#808080",
+      "note": "'Enter your business email'"
+    },
+    {
+      "role": "caption / reassurance",
+      "approxSizePx": "15px CSS (~30px raw)",
+      "weight": "400",
+      "colorHex": "#8C8C8C",
+      "note": "security line + micro-benefits, muted grey"
+    },
+    {
+      "role": "label / eyebrow",
+      "approxSizePx": "15px CSS",
+      "weight": "600",
+      "colorHex": "#B4B4B4",
+      "note": "'TRUSTED BY 5000+ TEAMS', uppercase, letter-spacing ~1.5px"
+    }
+  ],
+  "reusableComponents": [
+    {
+      "name": "EmailCaptureBar",
+      "description": "Translucent rounded dark panel wrapping a borderless input and a solid CTA button",
+      "variants": "default; focus (input active); loading (button spinner); error (red hint)"
+    },
+    {
+      "name": "PrimaryButton",
+      "description": "Solid violet CTA, ~12px radius, white semibold label",
+      "variants": "default #7C30F7 / gradient #5B3DF5→#7358FF; hover (lighten); disabled; loading"
+    },
+    {
+      "name": "TextInput",
+      "description": "Borderless email field inside capture bar",
+      "variants": "placeholder; filled; focus; invalid"
+    },
+    {
+      "name": "DisplayHeadline",
+      "description": "ExtraBold multi-line headline supporting an inline colored (red) emphasis span",
+      "variants": "white; white+red-emphasis"
+    },
+    {
+      "name": "IconTextReassurance",
+      "description": "Leading icon (shield-check) + muted multi-line caption",
+      "variants": "shield-check green; generic info"
+    },
+    {
+      "name": "BulletSeparatedList",
+      "description": "Inline benefits separated by middot",
+      "variants": "2-item; 3-item"
+    },
+    {
+      "name": "EyebrowLabel",
+      "description": "Uppercase tracked light-grey label",
+      "variants": "with count / plain"
+    },
+    {
+      "name": "GlowingImagePlaceholder",
+      "description": "Rounded media placeholder with colored outer glow + ring",
+      "variants": "yellow glow (this screen); could be purple/red per variant"
+    },
+    {
+      "name": "PartnerLogoRow",
+      "description": "Evenly distributed monochrome logo row",
+      "variants": "with divider above; count 5–7; desaturated white"
+    },
+    {
+      "name": "HairlineDivider",
+      "description": "Low-opacity full-width rule",
+      "variants": "white 10%; gradient"
+    },
+    {
+      "name": "RoundedPageContainer",
+      "description": "Outer rounded hero frame with gradient bg + hairline border",
+      "variants": "purple hero; other surface gradients"
+    }
+  ],
+  "charts": [],
+  "assetsNeeded": [
+    {
+      "name": "hero-media-placeholder",
+      "type": "image/illustration",
+      "note": "Large grey rounded placeholder in right column — swap for product screenshot/video with yellow glow"
+    },
+    {
+      "name": "icon-shield-check",
+      "type": "icon",
+      "note": "Green shield with checkmark before reassurance text"
+    },
+    {
+      "name": "icon-dot-separator",
+      "type": "glyph",
+      "note": "Middot bullet used between micro-benefits"
+    },
+    {
+      "name": "logo-samsung",
+      "type": "partner-logo",
+      "note": "Monochrome white wordmark"
+    },
+    {
+      "name": "logo-hellorache",
+      "type": "partner-logo",
+      "note": "Icon + 'HelloRache' wordmark, white"
+    },
+    {
+      "name": "logo-sitecore",
+      "type": "partner-logo",
+      "note": "Circular mark + 'SITECORE', white"
+    },
+    {
+      "name": "logo-hiive",
+      "type": "partner-logo",
+      "note": "Hexagon mark + 'Hiive', white"
+    },
+    {
+      "name": "logo-ruby-ribbon",
+      "type": "partner-logo",
+      "note": "Ribbon mark + 'RUBY RIBBON', white"
+    },
+    {
+      "name": "logo-kd",
+      "type": "partner-logo",
+      "note": "'KD_' bold monospace-style mark, white"
+    },
+    {
+      "name": "logo-bending-spoons",
+      "type": "partner-logo",
+      "note": "'BENDING SPOONS' wordmark, white"
+    },
+    {
+      "name": "bg-hero-gradient",
+      "type": "background",
+      "note": "Indigo→violet radial/linear bloom gradient"
+    }
+  ],
+  "fidelityNotes": [
+    "Background is not a flat fill: multi-stop gradient with a bright violet bloom (~#5B3DF5/#2E1F80) upper-center-right fading to near-black indigo #0E0A2C at outer edges and bottom. Best reproduced with a large radial-gradient layered over a base #0E0A2C.",
+    "Outer hero is a rounded rectangle (~24px radius) with a ~1px translucent white border (#FFFFFF at ~8–12% opacity) and ~24px inset from viewport.",
+    "Yellow image glow is the signature effect: solid grey placeholder (#D9D9D9) + a yellow ring/border (~#FFE300, ~2–3px) + a large diffuse outer glow (box-shadow blur ~40–60px CSS, color ~#FFE300 fading through #FFC668). Glow reads strongest along bottom and right edges.",
+    "Placeholder corner radius ~24–28px CSS.",
+    "Email capture bar is a semi-transparent dark panel (~#313745 over gradient, possibly with slight backdrop feel) with ~16px radius and a faint lighter inner top edge; the input area has no visible border, only the panel frames it.",
+    "CTA button radius ~12px; consider subtle violet gradient (#5B3DF5→#7358FF) rather than flat for depth; white text semibold.",
+    "Headline uses ExtraBold Plus Jakarta Sans with very tight line-height (~0.95); red emphasis is pure #FF0000 (not the warmer #FF5C5C).",
+    "Divider and micro-text rely on low-opacity whites/greys — match opacity precisely to avoid muddy look on the gradient.",
+    "Partner logos are all normalized to white/light-grey (#FFFFFF/#C2C2C2) with no color; apply brightness/grayscale filter if sourcing colored SVGs."
+  ],
+  "interactions": [
+    "Email input: focus state (ring/lighten on capture panel), typing, inline validation for business-email format.",
+    "Scan Company Domain button: hover lighten/scale, active press, loading spinner while scanning, disabled until valid email.",
+    "Form submit triggers domain scan flow (likely routes to results / breached report).",
+    "Partner logos: static (possibly subtle marquee on smaller widths, but appears static here).",
+    "Hero media placeholder: likely becomes autoplay video or interactive product demo when real asset lands.",
+    "No tabs, dropdowns, sorting, or copy actions on this screen."
+  ],
+  "responsiveNotes": "Desktop (shown): two-column split, content left ~46%, glowing media right ~50%, 7-logo row across full width, bottom-pinned. Tablet: reduce headline to ~44–48px, keep two columns but shrink media or drop it below the content; capture bar stays horizontal; logo row wraps to 2 rows or shrinks. Mobile: single column, stack order = headline → subhead → capture bar (input and button stack vertically, both full-width, button below input) → reassurance line → micro-benefits (may wrap/stack) → trusted-by label → media placeholder (full-width, reduced height, keep yellow glow but smaller blur) → logo row becomes a 2–3 column wrapped grid or horizontal scroll. Headline ~32–36px on mobile with red emphasis preserved. Maintain ~20–24px side padding and the outer rounded frame can drop to full-bleed (radius 0) on small screens."
+}

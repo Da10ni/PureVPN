@@ -1,0 +1,431 @@
+{
+  "screen": "dashboard-employee-exposure",
+  "surface": "dashboard",
+  "exportDimensions": "Export 3200x2000 px (~2x). CSS reference frame ≈ 1600x1000 px. All original-pixel measurements below are divided by 2 for CSS px.",
+  "layoutSummary": "Two-zone app shell: a fixed left sidebar (~272px CSS wide, white) and a scrolling main content area on a very light grey canvas (#F9FAFB / #F6F6F6). The main area stacks vertically: a top bar (page title left + Live Support / bell / avatar right), a horizontal tab strip with a purple active underline, a page header (H2 + description), a 4-up stat-card row, a full-width search input, a horizontal row of filter pills + a Filters dropdown pinned right, and a sortable data table with header row and severity/status badge cells. Content has generous left/right padding (~40px CSS) and the sidebar sits flush to the left edge with a subtle right hairline divider. A yellow 'Upgrade Plan' promo card is pinned to the sidebar bottom.",
+  "sections": [
+    {
+      "name": "Sidebar - Brand + Team",
+      "description": "White fixed sidebar. Top: PureVPN logo (purple rounded-square gradient mark with white swoosh + 'purevpn' wordmark in near-black lowercase). Below, a 'Team Name' caption label over 'Bending Spoons' team name. A thin full-width hairline divider separates this block from the nav. A small circular collapse toggle (chevron-left in a white circle with border) floats on the sidebar's right edge, vertically aligned with the team block.",
+      "layout": "vertical stack, ~24-28px horizontal padding",
+      "components": [
+        "Logo lockup",
+        "Team switcher label",
+        "Collapse toggle button",
+        "Divider"
+      ],
+      "keyColors": [
+        "#7C30F7",
+        "#5B3DF5",
+        "#191D25",
+        "#637381",
+        "#EEECEC"
+      ],
+      "notes": "Logo mark uses purple gradient (#7C30F7 -> #5B3DF5 family). 'Team Name' is a small muted grey caption; team name is bold near-black."
+    },
+    {
+      "name": "Sidebar - Primary Navigation",
+      "description": "Vertical list of nav items, each = 20px icon + label. Top group (muted/grey, inactive): Dashboard, Setup VPN, Downloads, Manual Configuration. Then a divider. Active item 'Identity Protection' rendered in a rounded rectangular pill with a very light lavender fill (#ECE8FF-ish) and a purple left accent bar flush to the sidebar edge, icon + label in brand purple. Below: Remove my Data, Password Manager (these appear active-dark near-black). Divider. Lower group (grey): Profile Settings, Subscription, Feedback.",
+      "layout": "vertical list, ~14-16px row vertical padding, icon-gap ~12px",
+      "components": [
+        "SidebarNavItem (default/active/muted variants)",
+        "Active pill with left accent bar",
+        "Dividers"
+      ],
+      "keyColors": [
+        "#7C2FF7",
+        "#ECE8FF",
+        "#191D25",
+        "#637381",
+        "#717171"
+      ],
+      "notes": "Active state = lavender pill fill + 2-3px purple left bar bleeding off the left edge + purple icon/text. Inactive top items are noticeably lighter grey (disabled feel) than the near-black Remove my Data / Password Manager rows."
+    },
+    {
+      "name": "Sidebar - Upgrade Plan promo",
+      "description": "Pinned to sidebar bottom: full-width soft-yellow card (#FFC668/#FFE300 tint, ~#FFF3D6 fill) with a gold crown icon, 'Upgrade Plan' label in amber/brown, and a small rounded '-20%' discount chip on the right.",
+      "layout": "horizontal: icon + label + trailing chip",
+      "components": [
+        "Promo card",
+        "Discount chip"
+      ],
+      "keyColors": [
+        "#FFC668",
+        "#B7883B",
+        "#FFE300"
+      ],
+      "notes": "Warm amber text (#B7883B), pale yellow rounded card, small pill chip for the discount."
+    },
+    {
+      "name": "Top Bar",
+      "description": "Spans the main content width. Left: page title 'Identity theft protection' as a large bold near-black H1. Right cluster: a chat/smiley icon + 'Live Support' text link, a bell notification icon with a small red unread dot, and a circular avatar with 'SA' initials on a light lavender fill.",
+      "layout": "space-between row, vertically centered",
+      "components": [
+        "Page title",
+        "Live Support link+icon",
+        "Notification bell w/ dot",
+        "Avatar chip"
+      ],
+      "keyColors": [
+        "#1E1E1E",
+        "#191D25",
+        "#FF0000",
+        "#ECE8FF",
+        "#7C2FF7"
+      ],
+      "notes": "Avatar fill is pale lavender with purple initials. Bell dot is pure red (#FF0000/#FE2E2E)."
+    },
+    {
+      "name": "Tab Strip",
+      "description": "Horizontal row of 5 tabs, each = 20px outline icon + label: Threat overview (shield), Monitored assets (stacked layers), Employee exposure (people - ACTIVE), Domain squatting (link), Alerts & settings (gear). Active tab 'Employee exposure' has near-black bold text and a thick purple underline bar directly beneath it; inactive tabs are dark-grey/near-black with lighter weight and no underline. A full-width light hairline runs under the whole strip.",
+      "layout": "horizontal, evenly spaced with gaps (~48px between tabs)",
+      "components": [
+        "Tab (active/inactive)",
+        "Underline indicator",
+        "Bottom hairline"
+      ],
+      "keyColors": [
+        "#5B3DF5",
+        "#191D25",
+        "#637381",
+        "#EEECEC"
+      ],
+      "notes": "Active underline is ~3px CSS, brand indigo #5B3DF5, sitting on top of the grey hairline divider that spans the full content width."
+    },
+    {
+      "name": "Page Header",
+      "description": "H2 'Employee exposure' in bold near-black, with a one-line grey description below: 'Details on employee exposure including identified risks and current mitigation measures.'",
+      "layout": "stacked, left-aligned",
+      "components": [
+        "Section title",
+        "Subtitle/description"
+      ],
+      "keyColors": [
+        "#191D25",
+        "#637381"
+      ],
+      "notes": "Subtitle ~15-16px CSS medium-grey."
+    },
+    {
+      "name": "Stat Cards Row",
+      "description": "4 equal-width white cards in a row with gaps. Each card: a small label with an info (i) circle icon to its right, and a very large bold number beneath. Cards: 'Total records' 256, 'Employee records' 182, 'Distinct emails' 150, 'Infected machines' 32. The first three numbers are near-black; the fourth (Infected machines / 32) is red to signal alarm.",
+      "layout": "4-col equal grid, gap ~24px CSS",
+      "components": [
+        "StatCard",
+        "InfoTooltip icon",
+        "Big-number KPI"
+      ],
+      "keyColors": [
+        "#FFFFFF",
+        "#191D25",
+        "#FF0000",
+        "#637381",
+        "#F6F6F6"
+      ],
+      "notes": "Cards are white with ~16px CSS radius, very soft shadow, generous internal padding (~28-32px). Numbers are ~44-48px CSS heavy weight. 'Infected machines' number is #FF0000/#FE2E2E red; its label stays grey. Info icon is a thin grey circled-i."
+    },
+    {
+      "name": "Search Bar",
+      "description": "Full-width rounded search input with a leading magnifier icon and grey placeholder 'Search records'. White fill, subtle border, pill-ish large radius.",
+      "layout": "full-width single input",
+      "components": [
+        "SearchInput"
+      ],
+      "keyColors": [
+        "#FFFFFF",
+        "#637381",
+        "#EEECEC"
+      ],
+      "notes": "Large radius (~28-30px CSS, almost pill), thin light-grey border, generous vertical padding (~14px)."
+    },
+    {
+      "name": "Filter Pills Row",
+      "description": "Horizontal row of toggle filter pills with counts. 'All (85)' is ACTIVE with a pale lavender fill and purple text/border. Others are default (white fill, grey border, dark text): Combo lists (10), Exposed creds (5), Exposed cards (5), Infostealer (20), Phished (10), Exfiltrated (5), Unclassified (30). Pinned to the far right is a 'Filters' dropdown button with a chevron-down.",
+      "layout": "horizontal wrap/scroll row, space-between with Filters pinned right",
+      "components": [
+        "FilterPill (active/default)",
+        "Filters dropdown button"
+      ],
+      "keyColors": [
+        "#ECE8FF",
+        "#7C2FF7",
+        "#191D25",
+        "#EEECEC",
+        "#FFFFFF"
+      ],
+      "notes": "Active pill 'All (85)' = lavender fill #ECE8FF, purple text/hairline border #7C2FF7, pill radius. Inactive pills = white, ~1px #EEECEC border, near-black label, fully rounded."
+    },
+    {
+      "name": "Data Table",
+      "description": "Full-width sortable table. Header row on a very light grey band (#F6F6F6) with a leading select-all checkbox then uppercase grey column labels: TYPE, SOURCE, SOURCE TYPE, SEVERITY, STATUS, DATE ADDED, with a sort (up/down arrows) glyph at the right of DATE ADDED. Body rows separated by light hairlines. Each row: checkbox; TYPE cell = person name (bold near-black) over their email (grey, smaller); SOURCE = plain text (RockYou2024, SWVL Breach, Indolj Breach); SOURCE TYPE = a light-grey rounded chip ('Combo List', 'Exposed creds'); SEVERITY = a soft badge with a colored dot ('Medium' yellow, 'High' orange/red); STATUS = a lavender 'Open' badge with a chevron (dropdown); DATE ADDED = plain grey date 'May 15th, 2026'. Visible rows: Faheem A., John Doe, Sarah Chen, Bilal Naiyer.",
+      "layout": "7-column table: [checkbox][Type/email][Source][Source Type][Severity][Status][Date+sort]",
+      "components": [
+        "TableHeaderCell",
+        "Checkbox",
+        "Two-line identity cell",
+        "SourceType chip",
+        "SeverityBadge",
+        "StatusBadge (dropdown)",
+        "Date cell",
+        "SortToggle"
+      ],
+      "keyColors": [
+        "#F6F6F6",
+        "#191D25",
+        "#637381",
+        "#EEECEC",
+        "#FFE300",
+        "#FFB454",
+        "#FF5C47",
+        "#ECE8FF",
+        "#7C2FF7"
+      ],
+      "notes": "Header band is #F6F6F6 with slightly rounded top. Row hairlines ~1px #EEECEC. Checkboxes are square with small radius, light border, unchecked. Column widths approx: Type wide, others medium, Date right-of-center."
+    }
+  ],
+  "typography": [
+    {
+      "role": "H1 / page title",
+      "approxSizePx": "34-38px",
+      "weight": "700",
+      "colorHex": "#1E1E1E"
+    },
+    {
+      "role": "H2 / section title (Employee exposure, stat numbers use bigger)",
+      "approxSizePx": "24-26px",
+      "weight": "700",
+      "colorHex": "#191D25"
+    },
+    {
+      "role": "KPI number (stat cards)",
+      "approxSizePx": "44-48px",
+      "weight": "700",
+      "colorHex": "#191D25 (red #FE2E2E for Infected machines)"
+    },
+    {
+      "role": "Tab label / nav label",
+      "approxSizePx": "17-18px",
+      "weight": "600 active / 500 inactive",
+      "colorHex": "#191D25 active, #637381 muted"
+    },
+    {
+      "role": "Body / subtitle description",
+      "approxSizePx": "15-16px",
+      "weight": "400-500",
+      "colorHex": "#637381"
+    },
+    {
+      "role": "Table cell - primary (name)",
+      "approxSizePx": "15-16px",
+      "weight": "600",
+      "colorHex": "#191D25"
+    },
+    {
+      "role": "Table cell - secondary (email)",
+      "approxSizePx": "13-14px",
+      "weight": "400",
+      "colorHex": "#637381"
+    },
+    {
+      "role": "Stat card label",
+      "approxSizePx": "15-16px",
+      "weight": "500",
+      "colorHex": "#637381"
+    },
+    {
+      "role": "Filter pill / badge label",
+      "approxSizePx": "13-14px",
+      "weight": "500",
+      "colorHex": "#191D25 / #7C2FF7 active"
+    },
+    {
+      "role": "Table header label (uppercase)",
+      "approxSizePx": "12-13px",
+      "weight": "600, letter-spaced, UPPERCASE",
+      "colorHex": "#637381"
+    },
+    {
+      "role": "Caption (Team Name, discount chip)",
+      "approxSizePx": "12-13px",
+      "weight": "500",
+      "colorHex": "#637381 / #B7883B"
+    },
+    {
+      "role": "Placeholder (search)",
+      "approxSizePx": "15-16px",
+      "weight": "400",
+      "colorHex": "#8C8C8C / #989898"
+    }
+  ],
+  "reusableComponents": [
+    {
+      "name": "SidebarNavItem",
+      "description": "20px icon + label row, optional active pill (lavender fill + purple left accent bar + purple text/icon)",
+      "variants": "default (near-black), muted/disabled (light grey), active (lavender pill + left bar)"
+    },
+    {
+      "name": "StatCard",
+      "description": "White rounded card: label + info icon, then big KPI number",
+      "variants": "neutral (near-black number), alert (red number, e.g. Infected machines)"
+    },
+    {
+      "name": "Tab",
+      "description": "icon + label with active purple underline",
+      "variants": "active (bold + underline), inactive"
+    },
+    {
+      "name": "FilterPill",
+      "description": "rounded count pill",
+      "variants": "active (lavender fill / purple border+text), default (white / grey border)"
+    },
+    {
+      "name": "SeverityBadge",
+      "description": "soft-tinted pill with leading colored dot + label",
+      "variants": "Medium (yellow dot #FFE300 on pale-yellow), High (orange/red dot #FF5C47 on pale-orange), (implied Low/Critical)"
+    },
+    {
+      "name": "StatusBadge",
+      "description": "lavender pill with label + chevron acting as inline dropdown",
+      "variants": "Open (lavender/purple); likely Resolved/Ignored variants in other colors"
+    },
+    {
+      "name": "SourceTypeChip",
+      "description": "neutral light-grey rounded chip for taxonomy label",
+      "variants": "Combo List, Exposed creds, etc. (single grey style)"
+    },
+    {
+      "name": "Button - Filters dropdown",
+      "description": "white bordered button with label + chevron-down",
+      "variants": "default"
+    },
+    {
+      "name": "SearchInput",
+      "description": "large-radius input with leading magnifier icon + placeholder",
+      "variants": "empty/placeholder, focus"
+    },
+    {
+      "name": "Checkbox",
+      "description": "square, small-radius, light border",
+      "variants": "unchecked, checked (purple), indeterminate (header select-all)"
+    },
+    {
+      "name": "Avatar",
+      "description": "circular initials chip",
+      "variants": "lavender fill + purple initials"
+    },
+    {
+      "name": "IconButton",
+      "description": "bare icon action (bell w/ dot, live support, collapse toggle)",
+      "variants": "with notification dot / plain / circular-bordered"
+    },
+    {
+      "name": "TableRow",
+      "description": "identity two-line cell + text cells + badge cells",
+      "variants": "default, hover, selected"
+    },
+    {
+      "name": "DataTable header",
+      "description": "grey band, uppercase labels, sort toggle",
+      "variants": "sortable column (with arrows), plain"
+    }
+  ],
+  "charts": [
+    "No charts on this screen. Data visualization is limited to KPI stat cards (big numbers) and colored severity/status badges. (Sibling 'Threat overview' tab likely holds the charts.)"
+  ],
+  "assetsNeeded": [
+    {
+      "name": "purevpn-logo-mark",
+      "type": "logo",
+      "note": "Purple rounded-square gradient (#7C30F7->#5B3DF5) with white swoosh/shield glyph"
+    },
+    {
+      "name": "purevpn-wordmark",
+      "type": "logo",
+      "note": "lowercase 'purevpn' near-black text lockup beside the mark"
+    },
+    {
+      "name": "icon-set-sidebar",
+      "type": "icon",
+      "note": "20px line icons: dashboard grid, setup VPN, downloads, manual config (server), identity (face-scan), remove data, password (lock), profile, subscription, feedback"
+    },
+    {
+      "name": "icon-set-tabs",
+      "type": "icon",
+      "note": "shield, stacked layers, people, link/chain, gear"
+    },
+    {
+      "name": "icon-info-circle",
+      "type": "icon",
+      "note": "thin circled-i on each stat card label"
+    },
+    {
+      "name": "icon-search",
+      "type": "icon",
+      "note": "magnifier for search input"
+    },
+    {
+      "name": "icon-chevron-down",
+      "type": "icon",
+      "note": "Filters dropdown + Open status badge"
+    },
+    {
+      "name": "icon-sort",
+      "type": "icon",
+      "note": "up/down double-arrow in table header"
+    },
+    {
+      "name": "icon-bell",
+      "type": "icon",
+      "note": "notification bell with red unread dot overlay"
+    },
+    {
+      "name": "icon-live-support",
+      "type": "icon",
+      "note": "chat/smiley bubble"
+    },
+    {
+      "name": "icon-crown",
+      "type": "icon",
+      "note": "gold crown for Upgrade Plan promo"
+    },
+    {
+      "name": "icon-chevron-left",
+      "type": "icon",
+      "note": "sidebar collapse toggle in bordered white circle"
+    },
+    {
+      "name": "avatar-SA",
+      "type": "image",
+      "note": "user initials avatar (can be generated, lavender bg)"
+    }
+  ],
+  "fidelityNotes": [
+    "Border radii: stat cards & table container ~16px CSS; pills/badges fully rounded (999px); search input ~28-30px (near-pill); source-type chips ~8px; sidebar active pill ~10-12px; discount chip ~999px.",
+    "Shadows: stat cards use a very soft, low-opacity ambient shadow (roughly 0 8px 24px rgba(0,0,0,0.04-0.06)); table has an even subtler lift. Nothing heavy.",
+    "Active tab underline is a solid ~3px CSS indigo bar (#5B3DF5) overlapping the full-width grey hairline (#EEECEC) below the tab strip.",
+    "Sidebar active nav = lavender fill (#ECE8FF) pill PLUS a ~3px purple (#7C2FF7) accent bar bleeding off the left content edge — the bar is outside the pill's rounded corner.",
+    "Badge tints are low-saturation washes of their dot color: Medium = pale yellow bg with saturated #FFE300 dot; High = pale peach/orange bg with #FF5C47/#FFB454 dot; Open status = pale lavender (#ECE8FF) with purple text.",
+    "KPI red (#FE2E2E/#FF0000) is used ONLY for the alarming 'Infected machines' number; label stays neutral grey — do not tint the whole card.",
+    "Canvas vs card contrast is very subtle: page bg ~#F9FAFB/#F6F6F6, cards pure white #FFFFFF, table header band #F6F6F6. Keep borders as ~1px #EEECEC hairlines, not dark.",
+    "Logo mark gradient is diagonal purple; wordmark is near-black (#191D25).",
+    "Info-circle, search magnifier, and sort glyphs are thin 1.5px stroke grey (#637381/#8C8C8C).",
+    "Collapse toggle is a small white circle with a 1px grey border and a light shadow, half-overlapping the sidebar's right divider.",
+    "Row separators are single hairlines only (no vertical grid lines); table reads airy with ~20-24px CSS row vertical padding."
+  ],
+  "interactions": [
+    "Tabs: click switches active tab, moves the purple underline; content region swaps.",
+    "Filter pills: single-select toggle (active = lavender). 'All (85)' currently active; counts update the table.",
+    "Filters dropdown: opens an advanced filter panel/menu (chevron rotates).",
+    "Search input: live-filters table records; focus state raises border to purple.",
+    "Table header sort: DATE ADDED (and likely other cols) toggle asc/desc via the sort glyph; header may highlight active sort column.",
+    "Select-all checkbox in header toggles all row checkboxes (indeterminate state when partial).",
+    "Row checkboxes: multi-select for bulk actions.",
+    "Status badge 'Open': is a dropdown (chevron) to change record status (Open/Resolved/Ignored).",
+    "Info (i) icons on stat cards: hover tooltip explaining each metric.",
+    "Sidebar collapse toggle: collapses sidebar to icon-only rail.",
+    "Bell: opens notifications; red dot indicates unread.",
+    "Row hover: subtle background tint; likely a copy-email affordance on the identity cell hover.",
+    "Upgrade Plan card: click routes to billing/upgrade."
+  ],
+  "responsiveNotes": "Desktop (shown): fixed ~272px sidebar + fluid content; stat cards 4-up; table shows all 7 columns. Tablet (~1024px): sidebar collapsible to an icon rail (toggle already present); stat cards drop to 2x2; filter pills become a horizontally scrollable row; table may hide SOURCE TYPE or condense DATE. Mobile (<640px): sidebar becomes an off-canvas drawer behind a hamburger; top bar keeps logo + avatar, moves Live Support into a menu; page title scales down (~24-26px); stat cards stack 1-per-row (or 2-up scroll); tabs become a horizontally scrollable segmented strip; search full-width; filter pills scroll horizontally with Filters as an icon button; the data table collapses into stacked cards per record (name+email header, then Source/Severity/Status/Date as labeled key-value rows) since 7 columns won't fit. Maintain 16px gutters on mobile, 40px on desktop."
+}

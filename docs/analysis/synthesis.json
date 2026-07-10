@@ -1,0 +1,609 @@
+{
+  "designSystemSummary": "PureVPN runs on ONE token system expressed in TWO themes. Font is Plus Jakarta Sans (400/500/600/700/800) throughout. Brand color is purple: #7C2FF7 (primary/links/active) with a #5B3DF5→#7358FF CTA gradient; semantics are green(#00BA00/#7DE3B0 low), yellow(#FFE300 medium), orange(#FFB454/#FF5C47 high), red(#FF0000/#FF5C5C critical/danger), blue(#5CC8FF/#70CFFE info). THEME A — Light app + marketing: white cards (#FFFFFF) on cool off-white canvas (#F9FAFB / alt #F6F6F6), near-black headings (#191D25/#222222), muted slate body (#637381), lavender active states (#ECE8FF), ~16px card radii, whisper-soft shadows, hairline borders (#EEECEC). THEME B — Dark hero + report: near-black indigo grounds (#0E0A2C hero, #0B0E14 report) with a signature purple radial glow bleeding from a top/upper-right corner, cool dark panels (#191D25/#313745), white text with muted-lavender tiers (#CFC1D8 > #A989C8 > #897398), and inline accent recoloring of headline words (red #FF0000, emerald #7DE3B0). Signature motifs across both themes: pill-shaped email/domain capture bars (input + inline CTA), uppercase letter-spaced eyebrow labels, big-number KPI stat cards with colored accents, ranked horizontal/vertical bar charts, severity dot-badges, and a monospace terminal-card treatment unique to the hero-passwords screen. The report/hero also uses full-round translucent-tinted status pills over dark. Marketing wraps content in a max-width ~1200px centered column; dashboards use a fixed ~180–272px white sidebar + fluid light canvas.",
+  "componentInventory": [
+    {
+      "name": "MarketingLayout",
+      "description": "Centered max-width (~1200px) single-column scroll shell with alternating #FFFFFF / #F6F6F6 section bands, ~120px side gutters desktop / 24px mobile, and large vertical section padding (80–120px).",
+      "usedIn": [
+        "home-landing"
+      ],
+      "variants": "white-band, gray-band",
+      "priority": "foundation"
+    },
+    {
+      "name": "DarkHeroFrame / RoundedPageContainer",
+      "description": "Full-bleed dark navy (#0E0A2C) rounded container (~24px radius) with 1px translucent white hairline border and a layered purple radial-gradient glow (top/upper-right). Base for hero variants and the report page background.",
+      "usedIn": [
+        "home-landing",
+        "hero-passwords",
+        "hero-breached",
+        "report-exposure"
+      ],
+      "variants": "hero-inset-card, full-bleed-report, glow-top-right / glow-top-center(mobile)",
+      "priority": "foundation"
+    },
+    {
+      "name": "DashboardLayout",
+      "description": "Two-zone app shell: fixed white sidebar (180–272px) + scrolling light canvas (#F9FAFB) with top bar, optional tab strip, and content column. Sidebar collapses to icon-rail/off-canvas drawer on smaller widths.",
+      "usedIn": [
+        "dashboard-pro-plan",
+        "dashboard-employee-exposure",
+        "dashboard-threat-overview"
+      ],
+      "variants": "with-tabs, without-tabs, collapsed-rail, drawer",
+      "priority": "foundation"
+    },
+    {
+      "name": "Sidebar / SidebarNavItem",
+      "description": "Vertical nav: logo lockup, optional team switcher + collapse toggle, grouped nav rows (icon+label) with dividers, optional bottom promo card. Active item = lavender (#ECE8FF) pill + purple text/icon, some with a 2–3px purple left accent bar bleeding off-edge.",
+      "usedIn": [
+        "dashboard-pro-plan",
+        "dashboard-employee-exposure",
+        "dashboard-threat-overview"
+      ],
+      "variants": "item: default / muted-disabled / active-pill / active-with-left-bar; sidebar: with-team-block, with-upgrade-card",
+      "priority": "foundation"
+    },
+    {
+      "name": "TopBar",
+      "description": "App content header: page title (H1) left; right cluster of Live Support/help icon, notification bell (optional red unread dot), circular avatar (initials on lavender or image).",
+      "usedIn": [
+        "dashboard-pro-plan",
+        "dashboard-employee-exposure",
+        "dashboard-threat-overview"
+      ],
+      "variants": "with-notification-dot, avatar-initials / avatar-image",
+      "priority": "high"
+    },
+    {
+      "name": "NavBar (marketing)",
+      "description": "Full-width white top nav: logo left, center links with dropdown carets, right Login text link + Get started pill button. Sticky on scroll; hamburger drawer on mobile.",
+      "usedIn": [
+        "home-landing"
+      ],
+      "variants": "desktop-full, mobile-hamburger, with-dropdown-caret",
+      "priority": "high"
+    },
+    {
+      "name": "Button",
+      "description": "Primary rounded CTA plus secondary/text variants. Purple solid (#7C2FF7) or CTA gradient (#5B3DF5→#7358FF) for marketing/app; emerald (#2ECB8C/#7DE3B0) dark-ink variant for the passwords hero; white outlined secondary with optional brand icon.",
+      "usedIn": [
+        "home-landing",
+        "hero-passwords",
+        "hero-breached",
+        "dashboard-pro-plan",
+        "dashboard-employee-exposure",
+        "dashboard-threat-overview"
+      ],
+      "variants": "primary-purple, primary-gradient, primary-green(dark-ink), secondary-outline, text-link, pill(fully-round) / rounded(8–12px); sizes sm/md/lg; states default/hover/active/disabled/loading; with-icon",
+      "priority": "foundation"
+    },
+    {
+      "name": "Input / TextInput",
+      "description": "Text/email field. Borderless variant living inside a capture bar; standalone bordered variant (1px #DFDCDC, ~8px radius) for dashboard forms; large-radius search variant with leading magnifier.",
+      "usedIn": [
+        "home-landing",
+        "hero-passwords",
+        "hero-breached",
+        "dashboard-pro-plan",
+        "dashboard-employee-exposure"
+      ],
+      "variants": "borderless-in-bar, bordered-standalone, readonly, search-with-icon; states placeholder/focus/filled/invalid",
+      "priority": "foundation"
+    },
+    {
+      "name": "CaptureBar (Email/DomainInputGroup)",
+      "description": "Signature rounded pill/panel wrapping a borderless input + inline primary Button. Translucent dark fill on dark surfaces (#35324D/#313745), light on light. Nested-border pattern: faint outer shell + inset inner button.",
+      "usedIn": [
+        "home-landing",
+        "hero-passwords",
+        "hero-breached"
+      ],
+      "variants": "hero-large-dark, footer-compact-dark, green-cta / purple-cta; inline(desktop) / stacked(mobile); states default/focus/error/loading",
+      "priority": "high"
+    },
+    {
+      "name": "EyebrowLabel / Overline",
+      "description": "Uppercase letter-spaced (~+0.08em) micro-label above headings or section eyebrows/column headers.",
+      "usedIn": [
+        "home-landing",
+        "hero-passwords",
+        "hero-breached",
+        "report-exposure",
+        "dashboard-pro-plan",
+        "dashboard-employee-exposure",
+        "dashboard-threat-overview"
+      ],
+      "variants": "purple(#7C2FF7), red(#FF5C5C danger/CONFIDENTIAL), muted-lavender(on dark), gray(section overline)",
+      "priority": "high"
+    },
+    {
+      "name": "DisplayHeadline",
+      "description": "ExtraBold multi-line hero/section headline supporting inline recolored emphasis spans (red #FF0000, emerald #7DE3B0, colored punctuation).",
+      "usedIn": [
+        "home-landing",
+        "hero-passwords",
+        "hero-breached"
+      ],
+      "variants": "white, white+red-emphasis, white+green-emphasis, left-aligned / centered",
+      "priority": "high"
+    },
+    {
+      "name": "SectionHeader",
+      "description": "H2 (optionally with eyebrow above) + muted one-line description, centered (marketing) or left-aligned (dashboard/report).",
+      "usedIn": [
+        "home-landing",
+        "report-exposure",
+        "dashboard-employee-exposure",
+        "dashboard-threat-overview"
+      ],
+      "variants": "centered / left, with-eyebrow, with-description",
+      "priority": "high"
+    },
+    {
+      "name": "StatBlock / StatCard",
+      "description": "Big-number KPI. Marketing StatBlock = number + caption with optional vertical divider (4-up rows). Dashboard StatCard = white rounded card, label (+info icon), large number. Report StatCard = dark card with colored top accent + colored number. Alert variant colors the number red.",
+      "usedIn": [
+        "home-landing",
+        "report-exposure",
+        "dashboard-employee-exposure",
+        "dashboard-threat-overview"
+      ],
+      "variants": "marketing-divider-row, dashboard-white-card, report-dark-accent-top; number tone neutral/red-alert/red/orange/blue/white; with/without info-icon",
+      "priority": "foundation"
+    },
+    {
+      "name": "Badge / Pill",
+      "description": "Rounded status/label pill. Severity dot-badges (Low green / Medium yellow / High orange / Critical red on low-alpha tint), status badges (lavender 'Open' + chevron dropdown), confidential/COMPROMISED danger pills (tinted red + border, optional leading dot), neutral source-type chips, count filter pills.",
+      "usedIn": [
+        "home-landing",
+        "hero-passwords",
+        "report-exposure",
+        "dashboard-employee-exposure",
+        "dashboard-threat-overview"
+      ],
+      "variants": "severity(low/med/high/critical), status-dropdown, danger-outline(with-dot), confidential-pink, neutral-chip, filter-count(active-lavender/default), discount-chip",
+      "priority": "high"
+    },
+    {
+      "name": "Tabs",
+      "description": "Horizontal icon+label tab strip with a purple (#5B3DF5) active underline over a full-width bottom hairline; horizontally scrollable on mobile.",
+      "usedIn": [
+        "dashboard-employee-exposure",
+        "dashboard-threat-overview"
+      ],
+      "variants": "active-underline, inactive, scrollable",
+      "priority": "high"
+    },
+    {
+      "name": "DataTable / DataTableCard",
+      "description": "Sortable/structured table. Dashboard variant: light header band (#F6F6F6), uppercase column labels, select-all + row checkboxes, two-line identity cell, chip/badge/date cells, sort toggles, hairline row separators. Report variant: dark card-wrapped, rounded pill-style data rows, masked values, blue link cells, em-dash placeholders. Collapses to stacked label:value cards on mobile.",
+      "usedIn": [
+        "report-exposure",
+        "dashboard-employee-exposure"
+      ],
+      "variants": "light-dashboard(sortable, selectable), dark-report(pill-rows, masked/link cells); cell types text/two-line/chip/badge/link/masked/date; mobile-stacked",
+      "priority": "high"
+    },
+    {
+      "name": "ChartCard",
+      "description": "White(light) or dark(report) rounded panel: title + info icon + optional legend row + chart body. Wrapper for all data viz.",
+      "usedIn": [
+        "report-exposure",
+        "dashboard-threat-overview"
+      ],
+      "variants": "full-width, half-width, asymmetric, light / dark, with-legend / without",
+      "priority": "high"
+    },
+    {
+      "name": "HBarChart",
+      "description": "Ranked horizontal bar chart on dark track: left category label, bar (red→orange gradient OR solid blue), right-aligned value. No axes.",
+      "usedIn": [
+        "report-exposure"
+      ],
+      "variants": "infection-vector(gradient #FF5D5C→#FFB454), application-host(solid #70CFFE)",
+      "priority": "med"
+    },
+    {
+      "name": "VBarChart",
+      "description": "Vertical bar chart, weekday categories, y-axis ticks, rounded-top bars with vertical gradient (red→orange) or solid purple fills.",
+      "usedIn": [
+        "dashboard-threat-overview"
+      ],
+      "variants": "gradient-red-orange, solid-purple, mixed-series",
+      "priority": "med"
+    },
+    {
+      "name": "LineChart / Sparkline",
+      "description": "Single- or multi-series line chart. Report exposure-timeline sparkline (red line + faint red area fill, no axes); threat-overview multi-line (4 severity series with light gridlines).",
+      "usedIn": [
+        "hero-passwords",
+        "dashboard-threat-overview"
+      ],
+      "variants": "sparkline-area(no-axis), multi-series-with-grid, animated-stroke-reveal",
+      "priority": "med"
+    },
+    {
+      "name": "StackedAreaChart",
+      "description": "Smooth overlapping semi-transparent area bands, each with a 180deg fade-to-transparent gradient (green→amber→coral/red).",
+      "usedIn": [
+        "dashboard-threat-overview"
+      ],
+      "variants": "4-band severity",
+      "priority": "med"
+    },
+    {
+      "name": "StackedBarChart",
+      "description": "Single wide horizontal bar split into flat saturated color segments (red/orange/yellow) with axis labels.",
+      "usedIn": [
+        "dashboard-threat-overview"
+      ],
+      "variants": "3-segment domain-squatting",
+      "priority": "med"
+    },
+    {
+      "name": "LegendRow",
+      "description": "Inline colored-dot + label items describing chart series/severity.",
+      "usedIn": [
+        "report-exposure",
+        "dashboard-threat-overview"
+      ],
+      "variants": "4-severity, 3-category",
+      "priority": "med"
+    },
+    {
+      "name": "ComparisonCard",
+      "description": "Rounded card with eyebrow + title + green-check bullet list; lavender vs gray tinted pair.",
+      "usedIn": [
+        "home-landing"
+      ],
+      "variants": "lavender(#ECE8FF), gray(#F6F6F6)",
+      "priority": "med"
+    },
+    {
+      "name": "CheckBullet / ChecklistItem",
+      "description": "Filled circular check + text line. Green (#00BA00) comparison bullets; purple disc + white tick referral checklist; subtle dark circle in how-it-works steps.",
+      "usedIn": [
+        "home-landing",
+        "dashboard-pro-plan"
+      ],
+      "variants": "green, purple-disc, dark-subtle",
+      "priority": "med"
+    },
+    {
+      "name": "FeatureCard",
+      "description": "Light-gray rounded panel with centered white icon-tile (thin lavender border, purple stroke icon) + title + body.",
+      "usedIn": [
+        "home-landing"
+      ],
+      "variants": "5 icon variants (bell/search/grid/card…)",
+      "priority": "med"
+    },
+    {
+      "name": "MediaCard / GlowingImagePlaceholder",
+      "description": "Card/placeholder with media region + optional title/body. Marketing MediaCard (black image top + text); hero glowing placeholder (grey fill + colored outer glow ring).",
+      "usedIn": [
+        "home-landing",
+        "hero-breached"
+      ],
+      "variants": "media-top-text, glow-yellow / glow-purple",
+      "priority": "med"
+    },
+    {
+      "name": "FlowBar (Infostealer pipeline)",
+      "description": "Dark rounded purple-gradient bar containing translucent chips joined by arrow connectors; informational pipeline graphic.",
+      "usedIn": [
+        "home-landing"
+      ],
+      "variants": "4-chip sequence",
+      "priority": "low"
+    },
+    {
+      "name": "SplitPanel",
+      "description": "Two-tone flush panel: solid-purple illustration half + dark step-list half with numbered check steps.",
+      "usedIn": [
+        "home-landing"
+      ],
+      "variants": "how-it-works",
+      "priority": "low"
+    },
+    {
+      "name": "FaqAccordion / FaqItem",
+      "description": "Accordion row: question + circular +/- toggle, hairline divider; expand/collapse with icon rotation.",
+      "usedIn": [
+        "home-landing"
+      ],
+      "variants": "collapsed(+), expanded(−)",
+      "priority": "med"
+    },
+    {
+      "name": "CalloutBanner",
+      "description": "Tinted full-width banner with left accent border + bold lead-in + muted body. Danger red variant (report) shown.",
+      "usedIn": [
+        "report-exposure"
+      ],
+      "variants": "danger(red), warning, info",
+      "priority": "med"
+    },
+    {
+      "name": "MetaBar",
+      "description": "Full-width dark rounded strip holding inline label:value pairs; wraps to vertical stack on mobile.",
+      "usedIn": [
+        "report-exposure"
+      ],
+      "variants": "n-pairs single-row / stacked",
+      "priority": "low"
+    },
+    {
+      "name": "GradientBanner",
+      "description": "Full-bleed promo strip with purple→white horizontal gradient and inline CTA link.",
+      "usedIn": [
+        "dashboard-pro-plan"
+      ],
+      "variants": "coming-soon",
+      "priority": "low"
+    },
+    {
+      "name": "TerminalCard",
+      "description": "macOS-window dark card: title bar with 3 traffic-light dots + mono title, hairline divider, body slot (domain row, stat tiles, chart, credential row). Entire card set in monospace.",
+      "usedIn": [
+        "hero-passwords"
+      ],
+      "variants": "with-titlebar, glow-behind",
+      "priority": "med"
+    },
+    {
+      "name": "TrafficLightDots",
+      "description": "Row of 3 window-control dots (red/amber/green) — pure CSS.",
+      "usedIn": [
+        "hero-passwords"
+      ],
+      "variants": "sm",
+      "priority": "low"
+    },
+    {
+      "name": "CredentialRow",
+      "description": "Mono result row: masked email (cyan) + chevron + target system + tag pill.",
+      "usedIn": [
+        "hero-passwords"
+      ],
+      "variants": "meta-tag",
+      "priority": "low"
+    },
+    {
+      "name": "ReassuranceLine",
+      "description": "Leading shield-check icon + muted multiline text.",
+      "usedIn": [
+        "hero-passwords",
+        "hero-breached"
+      ],
+      "variants": "shield-green",
+      "priority": "low"
+    },
+    {
+      "name": "BulletTrustRow",
+      "description": "Inline middot-separated micro-benefits line.",
+      "usedIn": [
+        "hero-passwords",
+        "hero-breached"
+      ],
+      "variants": "2-item, 3-item",
+      "priority": "low"
+    },
+    {
+      "name": "PartnerLogoStrip",
+      "description": "Evenly distributed row of monochrome white/grey partner logos, optional hairline divider above.",
+      "usedIn": [
+        "home-landing",
+        "hero-breached"
+      ],
+      "variants": "7-logo, with-divider, desaturated",
+      "priority": "med"
+    },
+    {
+      "name": "Footer",
+      "description": "Dark (#222222) footer: logo + social icon circles, hairline, link columns + email-capture CTA, copyright row.",
+      "usedIn": [
+        "home-landing"
+      ],
+      "variants": "full-desktop, stacked-mobile",
+      "priority": "med"
+    },
+    {
+      "name": "SocialIconCircle",
+      "description": "Filled gray circle with white social glyph, hover state.",
+      "usedIn": [
+        "home-landing"
+      ],
+      "variants": "6 socials",
+      "priority": "low"
+    },
+    {
+      "name": "IconButton",
+      "description": "Bare stroke-icon action button (bell, help, collapse toggle, filters).",
+      "usedIn": [
+        "dashboard-pro-plan",
+        "dashboard-employee-exposure",
+        "dashboard-threat-overview"
+      ],
+      "variants": "plain, with-badge-dot, circular-bordered",
+      "priority": "med"
+    },
+    {
+      "name": "Avatar",
+      "description": "Circular user avatar — initials on lavender fill or image.",
+      "usedIn": [
+        "dashboard-pro-plan",
+        "dashboard-employee-exposure",
+        "dashboard-threat-overview"
+      ],
+      "variants": "initials, image, placeholder",
+      "priority": "med"
+    },
+    {
+      "name": "Divider / Hairline",
+      "description": "Thin 1px separator; horizontal (nav/footer/faq/rows) or vertical (between stats); low-opacity white on dark.",
+      "usedIn": [
+        "home-landing",
+        "report-exposure",
+        "dashboard-pro-plan",
+        "dashboard-employee-exposure",
+        "dashboard-threat-overview",
+        "hero-breached"
+      ],
+      "variants": "horizontal, vertical, on-light(#EEECEC), on-dark(#FFFFFF ~10%)",
+      "priority": "foundation"
+    },
+    {
+      "name": "UpgradePlanCard",
+      "description": "Gold-gradient sidebar promo card with crown icon, label, and -20% discount pill.",
+      "usedIn": [
+        "dashboard-employee-exposure",
+        "dashboard-threat-overview"
+      ],
+      "variants": "with-discount-badge",
+      "priority": "low"
+    },
+    {
+      "name": "Logo",
+      "description": "PureVPN lockup: purple gradient rounded-square/shield mark + 'purevpn' wordmark (dark) or white footer variant.",
+      "usedIn": [
+        "home-landing",
+        "dashboard-pro-plan",
+        "dashboard-employee-exposure",
+        "dashboard-threat-overview"
+      ],
+      "variants": "color-on-light, white-on-dark, mark-only",
+      "priority": "high"
+    }
+  ],
+  "componentInventory_note": "full shared library deduped across all 7 screens",
+  "screenBuildOrder": [
+    {
+      "screen": "hero-breached (Hero variant B)",
+      "complexity": "low",
+      "estComponents": "8",
+      "keyChallenges": "Simplest surface and best warm-up: establishes DarkHeroFrame + glow, DisplayHeadline with red span, CaptureBar (purple CTA), ReassuranceLine, BulletTrustRow, PartnerLogoStrip. Main fidelity risk is the yellow outer-glow ring on the media placeholder (large blur box-shadow) and matching low-opacity dividers on the gradient. No data/charts."
+    },
+    {
+      "screen": "hero-passwords (Hero variant A)",
+      "complexity": "medium",
+      "estComponents": "12",
+      "keyChallenges": "Reuses hero shell but adds the mono TerminalCard system: two font families (sans + monospace), TrafficLightDots, StatTiles, a sparkline area LineChart, CredentialRow, tinted status pills, and green (dark-ink) CTA variant. Multi-color headline with tiny colored periods and the three-tier muted-lavender text ramp are easy to miss."
+    },
+    {
+      "screen": "dashboard-pro-plan",
+      "complexity": "medium",
+      "estComponents": "14",
+      "keyChallenges": "First dashboard: builds DashboardLayout + Sidebar + TopBar + Card + Button + readonly Input + GradientBanner + ChecklistItem + OverlineLabel. Delicate three-white contrast (canvas #F9FAFB vs cards vs sidebar), purple→white banner fade reaching page bg, and the composited referral hero illustration (source SVG available). No charts — good layout-shell foundation before data-heavy screens."
+    },
+    {
+      "screen": "report-exposure",
+      "complexity": "high",
+      "estComponents": "16",
+      "keyChallenges": "Dark long-scroll document. Introduces dark ChartCard, HBarChart (gradient + solid variants), dark DataTableCard with masked/link/em-dash cells, StatCard with colored top-accent, CalloutBanner, MetaBar, AlertPill. Hardest parts: two ranked bar charts, responsive dark tables (horizontal-scroll vs stacked), and the precise dark-panel color hierarchy (#191D25/#313745/#343B4B/#191218)."
+    },
+    {
+      "screen": "home-landing",
+      "complexity": "high",
+      "estComponents": "20",
+      "keyChallenges": "Longest marketing page (10 sections). Reuses hero + CaptureBar + PartnerLogoStrip + StatBlock + Footer, but adds many one-off sections: ComparisonCards, FlowBar pipeline, FeatureCards with icon tiles, MediaCards, SplitPanel, FaqAccordion. High volume of layout work and reflow rules (4-up→2x2→1col, 3+2 feature grid, split-panel stacking) more than technical difficulty."
+    },
+    {
+      "screen": "dashboard-employee-exposure",
+      "complexity": "high",
+      "estComponents": "18",
+      "keyChallenges": "Most interactive screen: Tabs, 4-up StatCards (with red alert number), search Input, single-select FilterPills with counts, and the full sortable/selectable DataTable with two-line identity cells, SourceType chips, SeverityBadges, and a StatusBadge dropdown. Table→stacked-card mobile transform and select-all indeterminate state are the key challenges."
+    },
+    {
+      "screen": "dashboard-threat-overview",
+      "complexity": "max",
+      "estComponents": "22",
+      "keyChallenges": "Chart-heaviest screen and the true test of the dataviz layer: multi-line chart, smooth stacked-area/stream chart with per-band fade gradients, vertical bar chart (gradient + purple), horizontal stacked bar, plus asymmetric and 50/50 ChartCard grids, LegendRows, StatBlocks, and severity ListRows. Build last so every chart wrapper and severity token is already proven."
+    }
+  ],
+  "assetMap": {
+    "available": [
+      "logos/purevpn_logo.svg — PureVPN wordmark/logo for nav + all three dashboard sidebars (raster inside SVG, 123x40)",
+      "Plus Jakarta Sans full family (ttf, weights 400/500/600/700/800) — self-host, satisfies every typography role and the 'plus-jakarta-sans' asset need",
+      "icons/option1_svg.svg (320x336, 61 vector paths) — the referral-hero illustration for dashboard-pro-plan",
+      "icons/Rectangle 39.svg (1440x578, gradient) — hero background gradient sweep (home-landing / hero shells)",
+      "icons/Frame 6.svg (1106x131) and icons/Group 67.svg (1134x100) — partner-logo row strips for home-landing + hero-breached",
+      "icons/Frame 4.svg (1400x872) and icons/Frame 4 (1).svg (1400x833) — composite section mockups usable as MediaCard / how-it-works / hero media placeholders (embedded raster)",
+      "icons/Group 80.svg (938x551), Group 61/62 (554x310), Group 121 / Frame 12 (522x273) — misc composite/illustration blocks usable as report or section mockups"
+    ],
+    "missing": [
+      "purevpn-logo-white — white/footer + dark-sidebar logo variant (only the color wordmark SVG is provided; recolor or export)",
+      "Individual partner logos (Samsung, HelloRache, Sitecore, Hiive, Ruby Ribbon, KD_, Bending Spoons) as clean monochrome white SVGs — only pre-composited row strips exist; needed if the strip must be responsive/reflowed",
+      "Real report/product screenshots for the 3 MediaCards and the how-it-works purple panel (currently black/grey placeholders)",
+      "referral-hero final composited art IF option1_svg.svg proves to be a different illustration than the 3D phone+coins scene (verify)",
+      "Brand/social glyphs: LinkedIn 'in' mark (dashboard-pro-plan) and footer socials (Facebook, X, Instagram, YouTube, Reddit, Discord) — source from a brand-icon set",
+      "A licensed monospace font (JetBrains Mono / SF Mono) for the hero-passwords TerminalCard — not present in Brandkit"
+    ],
+    "recreatable": [
+      "All UI line-icons: sidebar nav set, tab icons (shield/layers/people/link/gear), top-bar (bell/help/chat), info-circle, search magnifier, chevrons, sort double-arrow, feature-card icons (bell/search/grid/card), crown, faq +/- — use Lucide/Heroicons and tint per theme",
+      "All gradients & glows as pure CSS: hero purple radial glow, report top glow, CTA gradient (#5B3DF5→#7358FF), purple→white banner fade, yellow media glow (box-shadow), card-blue gradient — no image assets needed",
+      "Green check circles / purple check discs, traffic-light dots, colored severity dots, confidential/COMPROMISED pills, discount chip — pure CSS/SVG",
+      "All charts (HBar/VBar/stacked-area/stacked-bar/multi-line/sparkline) rendered from data via SVG or a charting lib using the documented chartRamps — no static image assets",
+      "Flow-bar emoji/icon chips, middot separators, hairline dividers — CSS/emoji/inline SVG",
+      "Avatar initials chips — generated from user data on a lavender fill"
+    ]
+  },
+  "spacingScale": [
+    "2",
+    "4",
+    "8",
+    "12",
+    "16",
+    "20",
+    "24",
+    "32",
+    "40",
+    "48",
+    "64",
+    "80",
+    "96",
+    "120"
+  ],
+  "radii": [
+    "6 (pills small / alert pill / meta-strip inner)",
+    "8 (buttons, inputs, source-type chips, status badges)",
+    "10 (stat cards, chart panels, table rows, sidebar active pill)",
+    "12 (dashboard cards, table card, CTA on dark)",
+    "14 (hero capture-bar shell)",
+    "16 (feature/media cards, flow bar, dashboard stat cards, chart cards)",
+    "20 (comparison cards)",
+    "24 (hero frame / rounded page container / large marketing cards)",
+    "28 (search input near-pill)",
+    "999 (fully-round pills, badges, filter pills, social circles, avatars, primary pill buttons)"
+  ],
+  "shadows": [
+    "none — hairline border only (#EEECEC on light, #FFFFFF ~8-12% on dark)",
+    "xs: 0 1px 2px rgba(16,24,40,0.04) — inputs, chips",
+    "sm: 0 2px 8px rgba(16,24,40,0.05) — table lift, filter pills",
+    "md: 0 8px 24px rgba(16,24,40,0.05) — dashboard stat cards & content cards (soft, low-alpha; do not over-darken)",
+    "lg: 0 16px 40px rgba(16,24,40,0.08) — hero media cards, modal/dropdown popovers",
+    "glow-purple: 0 0 120px 40px rgba(124,47,247,0.35) — hero/report ambient purple glow (radial-gradient preferred over box-shadow)",
+    "glow-yellow: 0 0 60px 8px rgba(255,227,0,0.55) — hero-breached media placeholder ring/halo",
+    "glow-cta: 0 8px 24px rgba(91,61,245,0.35) — optional lift on primary purple CTA hover"
+  ],
+  "breakpoints": [
+    "sm: 640px (mobile → single column; sidebars become off-canvas drawer; capture bars & buttons stack full-width; tables become stacked label:value cards)",
+    "md: 768px (tablet; 4-up stat grids → 2x2; charts stack to one column; marketing comparison/feature cards stack)",
+    "lg: 1024px (sidebar collapses to icon-rail; tabs/filter pills horizontally scrollable; dashboard content fluid)",
+    "xl: 1280px (full desktop layouts; marketing container maxes ~1200px, report column ~1140px)",
+    "2xl: 1440px (design reference frame / max content width, centered with gutters)"
+  ],
+  "risks": [
+    "Two font families: the hero-passwords TerminalCard requires a monospace not in Brandkit — must license/self-host JetBrains Mono or SF Mono, or the card will render in Plus Jakarta and lose fidelity.",
+    "Delicate low-contrast whites on light theme (canvas #F9FAFB vs cards #FFFFFF vs table header #F6F6F6) — easy to render flat; rely on precise hairlines + soft shadows, verify against exports.",
+    "Three-tier muted-lavender text ramp on dark (#CFC1D8 > #A989C8 > #897398) plus low-opacity dividers over gradients are easy to collapse into generic gray, muddying the dark theme.",
+    "Chart fidelity is the biggest technical risk: smooth stacked-area/stream with per-band fade-to-transparent gradients, gradient-filled bars, and axis quirks (duplicate 500 y-labels, 'rvents' typo in source) — decide up front whether to replicate export quirks or correct them.",
+    "Signature glows (purple radial hero/report, yellow media halo, purple→white banner fade) must be CSS gradients/box-shadows, not images, and must never reduce text contrast — needs careful layering behind content.",
+    "Partner logos and white/footer logo variant are only available pre-composited; responsive reflow or recoloring may require re-exporting individual monochrome SVGs.",
+    "Report + employee tables at mobile: choosing horizontal-scroll vs stacked-card transform per table, while guaranteeing the page body never scrolls horizontally.",
+    "Color-token duplication (#7C30F7≈#7C2FF7, #1E1E1E≈#222222, #FE2E2E≈#FF0000, etc.) risks drift — must collapse to single tokens in the Tailwind config before building.",
+    "Interactive state coverage (FilterPill single-select, StatusBadge dropdown, table sort + select-all indeterminate, FAQ accordion, nav mega-dropdowns) is broad — scope state machines early to avoid rework."
+  ],
+  "recommendedPlan": "Phase 0 — Foundation (design tokens + primitives): Encode the deduped color system, Plus Jakarta type scale, spacing, radii, and shadow tokens into tailwind.config.ts + CSS variables (with dark-theme overrides). Self-host Plus Jakarta Sans + a monospace. Build primitives: Button, Input, CaptureBar, Badge/Pill, EyebrowLabel, Divider, Card, Avatar, IconButton, Logo. Phase 1 — Layout shells: DarkHeroFrame/RoundedPageContainer (with glow), MarketingLayout, DashboardLayout + Sidebar + TopBar + Tabs. Phase 2 — Hero warm-ups (validate dark theme + primitives): build hero-breached then hero-passwords (adds TerminalCard + mono + sparkline). Phase 3 — First dashboard (validate light shell): dashboard-pro-plan (Card, GradientBanner, ChecklistItem, readonly form). Phase 4 — Data layer: build the ChartCard wrapper + chart components (HBar, VBar, LineChart, StackedArea, StackedBar, LegendRow) against the documented chartRamps, plus StatCard and DataTable primitives — read the dataviz skill first. Phase 5 — Data-heavy screens: report-exposure, then dashboard-employee-exposure, then dashboard-threat-overview (each reuses the Phase 4 layer). Phase 6 — Marketing long-scroll: home-landing last, assembling reused hero/stat/footer components plus its one-off sections (ComparisonCard, FlowBar, FeatureCard, SplitPanel, FaqAccordion). Phase 7 — Polish: interactions/states (accordion, dropdowns, sort, filters, hover/focus), responsive reflow rules, asset swap-in (real screenshots, white logo, individual partner logos, brand icons), and accessibility/contrast verification against exports."
+}

@@ -1,0 +1,563 @@
+{
+  "brand": [
+    {
+      "token": "brand-300",
+      "hex": "#A989C8",
+      "usage": "Light purple accent on dark surfaces (icon tints, muted labels)"
+    },
+    {
+      "token": "brand-400",
+      "hex": "#9151F8",
+      "usage": "Mid-stop of purple->white fade gradient; lighter interactive purple"
+    },
+    {
+      "token": "brand-500",
+      "hex": "#8145FF",
+      "usage": "Bright purple accent / highlighted pills on dark UI"
+    },
+    {
+      "token": "brand-600",
+      "hex": "#7C2FF7",
+      "usage": "PRIMARY brand purple — links, active tab underline/text, logo, primary accents (raw dup #7C30F7)"
+    },
+    {
+      "token": "brand-700",
+      "hex": "#5B3DF5",
+      "usage": "CTA button base (indigo-purple) — 'Free Check', 'Get started', gradient start"
+    },
+    {
+      "token": "brand-750",
+      "hex": "#7358FF",
+      "usage": "CTA button gradient end-stop"
+    },
+    {
+      "token": "brand-800",
+      "hex": "#2E1F80",
+      "usage": "Deep indigo — hero mid-tones, dark decorative fills"
+    },
+    {
+      "token": "brand-900",
+      "hex": "#401656",
+      "usage": "Dark purple — hero/section backdrops"
+    },
+    {
+      "token": "brand-950",
+      "hex": "#2E0E3F",
+      "usage": "Darkest purple — deep hero/footer background layer"
+    },
+    {
+      "token": "brand-hero-navy",
+      "hex": "#0E0A2C",
+      "usage": "Hero & footer base background (near-black indigo), gradient end"
+    }
+  ],
+  "neutrals": [
+    {
+      "token": "neutral-0",
+      "hex": "#FFFFFF"
+    },
+    {
+      "token": "neutral-50",
+      "hex": "#F9FAFB"
+    },
+    {
+      "token": "neutral-100",
+      "hex": "#F6F6F6"
+    },
+    {
+      "token": "neutral-150",
+      "hex": "#F2F2F2"
+    },
+    {
+      "token": "neutral-200",
+      "hex": "#EEECEC"
+    },
+    {
+      "token": "neutral-250",
+      "hex": "#DFDCDC"
+    },
+    {
+      "token": "neutral-300",
+      "hex": "#D9D9D9"
+    },
+    {
+      "token": "neutral-400",
+      "hex": "#C2C2C2"
+    },
+    {
+      "token": "neutral-450",
+      "hex": "#B4B4B4"
+    },
+    {
+      "token": "neutral-500",
+      "hex": "#989898"
+    },
+    {
+      "token": "neutral-550",
+      "hex": "#8C8C8C"
+    },
+    {
+      "token": "neutral-600",
+      "hex": "#808080"
+    },
+    {
+      "token": "neutral-650",
+      "hex": "#717171"
+    },
+    {
+      "token": "neutral-660",
+      "hex": "#727272"
+    },
+    {
+      "token": "neutral-700",
+      "hex": "#626262"
+    },
+    {
+      "token": "neutral-710",
+      "hex": "#616161"
+    },
+    {
+      "token": "neutral-750",
+      "hex": "#637381"
+    },
+    {
+      "token": "neutral-800",
+      "hex": "#343B4B"
+    },
+    {
+      "token": "neutral-850",
+      "hex": "#222222"
+    },
+    {
+      "token": "neutral-880",
+      "hex": "#1E1E1E"
+    },
+    {
+      "token": "neutral-1000",
+      "hex": "#000000"
+    }
+  ],
+  "text": [
+    {
+      "token": "text-primary",
+      "hex": "#222222",
+      "usage": "Primary headings on light bg (raw dup #1E1E1E)"
+    },
+    {
+      "token": "text-body",
+      "hex": "#313745",
+      "usage": "Body copy / dark slate paragraph text (raw dup #343B4B)"
+    },
+    {
+      "token": "text-muted",
+      "hex": "#637381",
+      "usage": "Muted secondary text, table sub-labels, captions"
+    },
+    {
+      "token": "text-subtle",
+      "hex": "#697586",
+      "usage": "Subtle helper text / column headers (near dup #61708E)"
+    },
+    {
+      "token": "text-disabled",
+      "hex": "#989898",
+      "usage": "Disabled/placeholder text, inactive nav items (also #8C8C8C)"
+    },
+    {
+      "token": "text-on-dark",
+      "hex": "#FFFFFF",
+      "usage": "Text on dark hero/footer/report surfaces"
+    },
+    {
+      "token": "text-on-dark-muted",
+      "hex": "#FFFFFF80",
+      "usage": "50% white — secondary text/dividers on dark surfaces"
+    },
+    {
+      "token": "text-link",
+      "hex": "#7C2FF7",
+      "usage": "Hyperlinks, active tab label, brand-colored text"
+    },
+    {
+      "token": "text-danger",
+      "hex": "#FF0000",
+      "usage": "Emphasis danger text — 'Understand the threat.', critical stat values (raw dup #FE2E2E)"
+    },
+    {
+      "token": "text-accent-purple",
+      "hex": "#8E7A9D",
+      "usage": "Muted purple text/labels on dark & light purple surfaces"
+    },
+    {
+      "token": "text-accent-purple-2",
+      "hex": "#897398",
+      "usage": "Alt muted-purple label variant"
+    },
+    {
+      "token": "text-accent-purple-3",
+      "hex": "#6C5D82",
+      "usage": "Deeper muted-purple secondary label"
+    }
+  ],
+  "surfaces": [
+    {
+      "token": "surface-light-0",
+      "hex": "#FFFFFF",
+      "theme": "light",
+      "usage": "Card / panel background on light dashboards & marketing"
+    },
+    {
+      "token": "surface-light-50",
+      "hex": "#F9FAFB",
+      "theme": "light",
+      "usage": "App/page background (dashboard canvas)"
+    },
+    {
+      "token": "surface-light-100",
+      "hex": "#F6F6F6",
+      "theme": "light",
+      "usage": "Alternate section background, subtle fills"
+    },
+    {
+      "token": "surface-light-150",
+      "hex": "#F2F2F2",
+      "theme": "light",
+      "usage": "Inset/hover row fill, muted chips"
+    },
+    {
+      "token": "surface-light-200",
+      "hex": "#EEECEC",
+      "theme": "light",
+      "usage": "Card border-fill / very light divider surface"
+    },
+    {
+      "token": "surface-purple-50",
+      "hex": "#ECE8FF",
+      "theme": "light",
+      "usage": "Light purple feature card ('targeted attack' block)"
+    },
+    {
+      "token": "surface-purple-100",
+      "hex": "#EAE4EF",
+      "theme": "light",
+      "usage": "Light purple-gray card / section tint"
+    },
+    {
+      "token": "surface-purple-150",
+      "hex": "#CFC1D8",
+      "theme": "light",
+      "usage": "Purple-tinted border/surface on light UI"
+    },
+    {
+      "token": "surface-dark-950",
+      "hex": "#001219",
+      "theme": "dark",
+      "usage": "Deepest dark surface (near-black teal-black panels)"
+    },
+    {
+      "token": "surface-dark-900",
+      "hex": "#0B0E14",
+      "theme": "dark",
+      "usage": "Report page dark background base"
+    },
+    {
+      "token": "surface-dark-880",
+      "hex": "#191218",
+      "theme": "dark",
+      "usage": "Dark report card/panel fill"
+    },
+    {
+      "token": "surface-dark-870",
+      "hex": "#191D25",
+      "theme": "dark",
+      "usage": "Dark card/section fill (cool tone)"
+    },
+    {
+      "token": "surface-dark-800",
+      "hex": "#313745",
+      "theme": "dark",
+      "usage": "Elevated dark card / input on dark (dup #343B4B)"
+    },
+    {
+      "token": "surface-scrim-dark",
+      "hex": "#00000080",
+      "theme": "dark",
+      "usage": "50% black overlay/scrim on imagery"
+    },
+    {
+      "token": "surface-scrim-light",
+      "hex": "#FFFFFF80",
+      "theme": "light",
+      "usage": "50% white overlay/frosted layer"
+    }
+  ],
+  "borders": [
+    {
+      "token": "border-light",
+      "hex": "#D9D9D9"
+    },
+    {
+      "token": "border-light-soft",
+      "hex": "#DFDCDC"
+    },
+    {
+      "token": "border-light-subtle",
+      "hex": "#EEECEC"
+    },
+    {
+      "token": "border-alpha-20",
+      "hex": "#D9D9D933"
+    },
+    {
+      "token": "border-alpha-40",
+      "hex": "#D9D9D966"
+    },
+    {
+      "token": "border-dark",
+      "hex": "#313745"
+    },
+    {
+      "token": "border-dark-2",
+      "hex": "#343B4B"
+    },
+    {
+      "token": "border-on-dark",
+      "hex": "#FFFFFF80"
+    }
+  ],
+  "semantic": [
+    {
+      "token": "success",
+      "hex": "#00BA00",
+      "meaning": "success / positive — solid green"
+    },
+    {
+      "token": "success-soft",
+      "hex": "#7DE3B0",
+      "meaning": "success light — 'Low' badge fill, positive chart tint"
+    },
+    {
+      "token": "success-bg",
+      "hex": "#39D98A1F",
+      "meaning": "success surface — ~12% green badge/pill background"
+    },
+    {
+      "token": "warning",
+      "hex": "#FFC668",
+      "meaning": "warning — amber"
+    },
+    {
+      "token": "warning-strong",
+      "hex": "#FFB454",
+      "meaning": "warning strong — orange (chart/high accents)"
+    },
+    {
+      "token": "warning-yellow",
+      "hex": "#FFE300",
+      "meaning": "caution yellow — 'Medium' badge dot/fill"
+    },
+    {
+      "token": "warning-yellow-soft",
+      "hex": "#EFE064",
+      "meaning": "muted yellow — legend/medium alt"
+    },
+    {
+      "token": "danger",
+      "hex": "#FF0000",
+      "meaning": "danger / error — pure red"
+    },
+    {
+      "token": "danger-alt",
+      "hex": "#FE2E2E",
+      "meaning": "danger alt — critical text/stat red"
+    },
+    {
+      "token": "danger-soft",
+      "hex": "#FF5C5C",
+      "meaning": "danger light — 'Critical' badge, critical line"
+    },
+    {
+      "token": "danger-bg",
+      "hex": "#FFDADA",
+      "meaning": "danger surface — light red badge/alert background"
+    },
+    {
+      "token": "danger-bg-dark",
+      "hex": "#432121",
+      "meaning": "danger surface on dark — maroon confidential-banner fill"
+    },
+    {
+      "token": "info",
+      "hex": "#0B86CA",
+      "meaning": "info — blue (application chart primary)"
+    },
+    {
+      "token": "info-soft",
+      "hex": "#5CC8FF",
+      "meaning": "info light — lighter blue accent"
+    },
+    {
+      "token": "info-softer",
+      "hex": "#70CFFE",
+      "meaning": "info lightest — pale blue chart/UI"
+    }
+  ],
+  "severity": [
+    {
+      "level": "low",
+      "hex": "#7DE3B0"
+    },
+    {
+      "level": "medium",
+      "hex": "#FFE300"
+    },
+    {
+      "level": "medium-alt",
+      "hex": "#EFE064"
+    },
+    {
+      "level": "high",
+      "hex": "#FF5C47"
+    },
+    {
+      "level": "high-alt",
+      "hex": "#FFB454"
+    },
+    {
+      "level": "critical",
+      "hex": "#FF5C5C"
+    },
+    {
+      "level": "critical-strong",
+      "hex": "#FF0000"
+    }
+  ],
+  "gradients": [
+    {
+      "token": "gradient-brand-cta",
+      "css": "linear-gradient(90deg, #5B3DF5 0%, #7358FF 100%)",
+      "usage": "Primary CTA buttons ('Free Check', 'Get started'), active pill fills"
+    },
+    {
+      "token": "gradient-brand-hero",
+      "css": "linear-gradient(90.38deg, #7C30F7 0.1%, #0E0A2C 100%)",
+      "usage": "Home hero / dark-web hero background sweep (purple into navy)"
+    },
+    {
+      "token": "gradient-brand-fade-white",
+      "css": "linear-gradient(90deg, #7C2FF7 0%, #9151F8 54.81%, #FFFFFF 100%)",
+      "usage": "Purple-to-white fade — decorative dividers / progress track"
+    },
+    {
+      "token": "gradient-card-blue",
+      "css": "linear-gradient(90deg, #DAE3FE 0%, #E9EFFD 100%)",
+      "usage": "Light blue card/feature-tile background (repeated 15× across marketing & dashboard cards)"
+    },
+    {
+      "token": "gradient-infection-vector",
+      "css": "linear-gradient(90deg, #FF5D5C 0%, #FFB454 100%)",
+      "usage": "Report 'Exposure by Infection Vector' horizontal bar fill (red->orange)"
+    },
+    {
+      "token": "gradient-severity-area-red",
+      "css": "linear-gradient(180deg, #FE7062 5.86%, #FF928E 118.9%)",
+      "usage": "'Events by severity' stacked-area chart — critical/high red band fill"
+    },
+    {
+      "token": "gradient-severity-area-coral-1",
+      "css": "linear-gradient(8.64deg, #FEBBBA 8.29%, #FF928E 131.38%)",
+      "usage": "Severity area chart coral gradient variant (near-horizontal band)"
+    },
+    {
+      "token": "gradient-severity-area-coral-2",
+      "css": "linear-gradient(190.33deg, #FEBBBA -19.65%, #FF928E 219.72%)",
+      "usage": "Severity area chart coral gradient variant"
+    },
+    {
+      "token": "gradient-severity-area-coral-3",
+      "css": "linear-gradient(169.07deg, #FEBBBA -18.57%, #FF928E 218.63%)",
+      "usage": "Severity area chart coral gradient variant"
+    },
+    {
+      "token": "gradient-severity-area-coral-4",
+      "css": "linear-gradient(359.13deg, #FEBBBA -73.42%, #FF928E 177.47%)",
+      "usage": "Severity area chart coral gradient variant"
+    },
+    {
+      "token": "gradient-severity-area-coral-5",
+      "css": "linear-gradient(357.64deg, #FEBBBA -206.93%, #FF928E 609.97%)",
+      "usage": "Severity area chart coral gradient variant (extreme stops)"
+    },
+    {
+      "token": "gradient-severity-area-coral-6",
+      "css": "linear-gradient(196.35deg, #FEBBBA -554.98%, #FF928E 104.29%)",
+      "usage": "Severity area chart coral gradient variant"
+    },
+    {
+      "token": "gradient-severity-area-coral-7",
+      "css": "linear-gradient(196.39deg, #FEBBBA -349.48%, #FF928E 302.33%)",
+      "usage": "Severity area chart coral gradient variant"
+    }
+  ],
+  "chartRamps": [
+    {
+      "name": "infection-vector",
+      "stops": [
+        "#FF5D5C",
+        "#FF5C47",
+        "#FFB454",
+        "#FFC668",
+        "#FFE300"
+      ],
+      "usage": "Report 'Exposure by Infection Vector / Feed Source' bars — hot ramp red->orange->yellow (per-bar gradient #FF5D5C->#FFB454)"
+    },
+    {
+      "name": "application-host",
+      "stops": [
+        "#0B86CA",
+        "#5CC8FF",
+        "#70CFFE"
+      ],
+      "usage": "Report 'Exposure by Application / Host Surface' bars — cool blue ramp"
+    },
+    {
+      "name": "severity-legend",
+      "stops": [
+        "#7DE3B0",
+        "#FFE300",
+        "#FF5C47",
+        "#FF5C5C"
+      ],
+      "usage": "Threat-overview line/legend series Low/Medium/High/Critical (green, yellow, orange, red)"
+    },
+    {
+      "name": "severity-area",
+      "stops": [
+        "#7DE3B0",
+        "#FFC668",
+        "#FE7062",
+        "#FF928E"
+      ],
+      "usage": "'Events by severity' stacked-area chart fills — green (low) through amber to coral/red (critical)"
+    },
+    {
+      "name": "events-bar",
+      "stops": [
+        "#FF928E",
+        "#FFB454",
+        "#8145FF"
+      ],
+      "usage": "'Total amount of events' weekday bar chart — coral, amber & purple gradient columns"
+    },
+    {
+      "name": "domain-squatting-stack",
+      "stops": [
+        "#FF5C5C",
+        "#FFB454",
+        "#FFE300"
+      ],
+      "usage": "'Unresolved Events' stacked bar (Infostealers red / Exposed orange / Combo-list yellow)"
+    }
+  ],
+  "notes": "Mapping covers all 91 raw entries from brand-colors.md (76 solid hexes + 15 gradient lines). Solid-color duplicates collapsed to one token: #7C30F7≈#7C2FF7 (brand-600); #1E1E1E≈#222222 (text-primary/neutral); #343B4B≈#313745 (dark surface/border); #727272≈#717171, #616161≈#626262 (neutrals); #61708E≈#697586 (text-subtle); #FE2E2E≈#FF0000 (danger). The #DAE3FE->#E9EFFD light-blue card gradient appears 15 times (lines 60-74) with trivially different stop percentages (-0.02% to 100.01%) — all normalized to one token gradient-card-blue. Seven #FEBBBA->#FF928E coral gradients (lines 80-86) differ only by angle/stop and are all severity-area chart fills. LIKELY-UNUSED / hard-to-place in the four supplied screens: #B7883B (bronze/gold — no on-screen usage found, possibly a legacy award/badge accent); #001219 (deepest teal-black — reserved dark surface, not clearly visible); #8145FF, #A989C8, #CFC1D8, #6C5D82, #897398, #8E7A9D (muted-purple family — plausible dark-UI accents/tints but not distinctly identifiable in these specific screens). Severity semantics confirmed from the Employee-exposure badges (Medium=yellow, High=orange, Critical=red) and Threat-overview legends (Low=green added). Brand primary is #7C2FF7 (links/active) with #5B3DF5 as the CTA-button/gradient base."
+}

@@ -1,0 +1,549 @@
+{
+  "screen": "home-landing (PureVPN for Teams — Dark Web Exposure Scan marketing landing page)",
+  "surface": "marketing",
+  "exportDimensions": "2880 x 13312 px as exported (~2x). CSS reference ≈ 1440 x 6656 px. Divide all raw measurements by 2 for CSS px. Content container max-width ≈ 1200px CSS, centered, with ~120px CSS side gutters at full desktop width.",
+  "layoutSummary": "Very long single-column marketing scroll. Full-bleed white top nav, then a dark rounded hero card (navy #0E0A2C with a purple radial glow, top-right), then alternating light body sections on #FFFFFF and #F6F6F6 bands. Order top-to-bottom: (1) Nav, (2) Dark hero with domain-check input + trusted-by logo strip, (3) Stats band 'Your Company's Logins...' 4 stats, (4) Gray 'This is one real domain scan' 4 stats, (5) 'Your firewall is fine' two comparison cards + purple infostealer flow bar + red callout, (6) Gray 'See every leaked login' 3 dark-image cards with confidential pill, (7) White 'Continuous credential defense' 5 icon feature cards (3+2 centered), (8) Gray 'How the free domain scan works' split purple/dark panel with 3 numbered steps, (9) White FAQ 'Teams ask. We answer.' two-column accordion, (10) Dark #222222 footer with logo, socials, link columns and email capture. Sections are centered with large vertical padding (~80-120px CSS between sections); headings + subheads are centered except hero (left) and FAQ intro (left).",
+  "sections": [
+    {
+      "name": "Top navigation bar",
+      "description": "Full-width white sticky-style nav. Left: PureVPN logo (purple gradient shield mark + 'purevpn' wordmark, 'pure' bold + 'vpn' regular, black). Center: nav links Solutions v, Use Cases v, Industries v (with dropdown carets), Pricing, Case Studies, Blog. Right: 'Login' text link + 'Get started' pill button (purple #7C30F7, white text, fully rounded).",
+      "layout": "3-zone flex: logo left, nav-links center, actions right",
+      "keyColors": [
+        "#FFFFFF bg",
+        "#1E1E1E/#191D25 link text",
+        "#7C30F7 CTA pill"
+      ],
+      "components": [
+        "Logo",
+        "NavLink",
+        "NavLink w/ caret",
+        "TextButton (Login)",
+        "PillButton (Get started)"
+      ],
+      "notes": "Nav height ≈ 72px CSS. Links ~16px medium, dark gray. Comfortable ~40px gaps between links."
+    },
+    {
+      "name": "Hero (dark)",
+      "description": "Large rounded-corner dark hero card inset from page edges. Eyebrow 'PUREVPN FOR TEAMS · DARK WEB EXPOSURE SCAN' in muted purple caps. H1 in three lines: 'See what's exposed.' (white) / 'Understand the threat.' (red) / 'Take back control.' (white). Sub-paragraph in muted lavender-gray. Below: a large pill-shaped search field group — text input 'Enter your company domain' + purple 'Free Check' button inside a translucent dark container. Bottom: 'TRUSTED BY 5000+ TEAMS' label + horizontal partner logo strip.",
+      "layout": "Left-aligned content column (~50% width); large empty right area holds the purple glow",
+      "keyColors": [
+        "#0E0A2C base",
+        "#2D1E7D / #251968 purple radial glow top-right",
+        "#FFFFFF headline",
+        "#FF0000 red headline line",
+        "#35324D input container",
+        "#7C30F7 button",
+        "muted #8E7A9D eyebrow/sub"
+      ],
+      "components": [
+        "EyebrowLabel",
+        "H1",
+        "BodyText",
+        "DomainInputGroup (input+button)",
+        "TrustLabel",
+        "PartnerLogoStrip"
+      ],
+      "notes": "Hero card corner radius ≈ 24px CSS. Purple glow is a soft radial/linear bloom bleeding from upper-right, matches gradient #7C30F7→#0E0A2C (palette line 56). Input group has subtle inner border and semi-transparent fill."
+    },
+    {
+      "name": "Partner logo strip",
+      "description": "Row of 7 monochrome (white/near-white) partner logos on the dark hero: SAMSUNG, HelloRache, SITECORE, Hiive, RUBY RIBBON, 'KD_, BENDING SPOONS. Separated from headline by a thin hairline divider under 'TRUSTED BY 5000+ TEAMS'.",
+      "layout": "Single horizontal row, evenly spaced, centered/justified",
+      "keyColors": [
+        "#FFFFFF logos at ~80-100% opacity",
+        "#0E0A2C bg"
+      ],
+      "components": [
+        "PartnerLogoStrip",
+        "Divider (hairline #FFFFFF ~10% opacity)"
+      ],
+      "notes": "Logos are flat white treatments; will need each as an asset."
+    },
+    {
+      "name": "Stats band — 'Your Company's Logins Are Already Moving Across the Dark Web'",
+      "description": "White section. Centered H2 (2 lines), centered gray subhead paragraph, then a 4-up stat row: 88% / 30% / 241 / $4.4M, each with a small gray caption under it. Stats separated by thin vertical divider rules.",
+      "layout": "Centered heading + 4-column stat grid with vertical dividers",
+      "keyColors": [
+        "#FFFFFF bg",
+        "#0E0A2C stat numbers & heading",
+        "#637381 caption/subhead",
+        "#DFDCDC/#D9D9D9 dividers"
+      ],
+      "components": [
+        "H2",
+        "Subhead",
+        "StatBlock (big number + caption)",
+        "VerticalDivider"
+      ],
+      "notes": "Big numbers ~56px CSS bold; captions ~15px gray. Thin vertical separators between the 4 stats."
+    },
+    {
+      "name": "Gray stats band — 'This is one real domain scan'",
+      "description": "Light gray (#F6F6F6) full-width band. Centered H2, centered subhead, then a second 4-up stat row: 440 / 266 / 10 / 0 with gray captions and vertical dividers. Visually mirrors the previous stats row but on gray and with a hard red-vs-safe framing.",
+      "layout": "Centered heading + 4-column stat grid with vertical dividers",
+      "keyColors": [
+        "#F6F6F6 bg",
+        "#0E0A2C numbers",
+        "#637381 captions",
+        "#D9D9D9 dividers"
+      ],
+      "components": [
+        "H2",
+        "Subhead",
+        "StatBlock",
+        "VerticalDivider"
+      ],
+      "notes": "Same StatBlock component reused; only background changes to #F6F6F6."
+    },
+    {
+      "name": "'Your firewall is fine' — comparison + flow",
+      "description": "White section. Purple eyebrow 'THE INFOSTEALER REALITY', centered H2 (2 lines), centered gray body paragraph. Then two side-by-side comparison cards: LEFT card lavender (#ECE8FF/#EAE4EF) 'A targeted attack on your servers' with purple eyebrow 'THE BREACH YOU'RE BUDGETING FOR' and 4 green-check bullet items; RIGHT card light gray (#F6F6F6) 'Malware on a personal device' eyebrow 'THE BREACH ALREADY IN PROGRESS' with 4 green-check bullets. Below the cards: a full-width purple gradient flow bar with 4 chips connected by arrows — 'Employee device' → 'Browser-saved passwords' → 'Infostealer (Raccoon, Meta, Vidar)' → 'Your corporate systems' (each chip has a small emoji/icon). Below that: a centered dark bold statement with the phrase '440 leaked credential records' in red.",
+      "layout": "Centered heading; 2-col card grid; full-width gradient flow bar; centered callout",
+      "keyColors": [
+        "#FFFFFF bg",
+        "#7C30F7 eyebrow",
+        "#ECE8FF left card",
+        "#F6F6F6 right card",
+        "#00BA00 check circles",
+        "flow bar gradient #7C30F7→#0E0A2C (left-to-right)",
+        "#FF0000 highlighted phrase"
+      ],
+      "components": [
+        "EyebrowLabel",
+        "H2",
+        "BodyText",
+        "ComparisonCard (checklist)",
+        "CheckBullet",
+        "FlowBar",
+        "FlowChip",
+        "ArrowConnector",
+        "HighlightCallout"
+      ],
+      "notes": "Comparison cards have ~20px radius, generous padding. Flow bar is a dark rounded (~20px) container with a strong purple glow on the left fading to navy; chips are translucent rounded pills with subtle border."
+    },
+    {
+      "name": "Gray band — 'See every leaked login before an attacker uses it'",
+      "description": "Light gray (#F6F6F6) band. Purple eyebrow 'WHAT YOUR FREE SCAN UNLOCKS', centered H2, centered subhead, then a small centered pink pill badge '🔒 CONFIDENTIAL — INTERNAL SECURITY USE ONLY'. Below: 3-up card row. Each card is white with a large black (image placeholder) block at top and a title + gray paragraph below: 'Know exactly who's exposed', 'See which company systems are at risk', 'See where the leaks are coming from'.",
+      "layout": "Centered heading + confidential pill + 3-column card grid",
+      "keyColors": [
+        "#F6F6F6 bg",
+        "#7C30F7 eyebrow",
+        "#FFDADA pill bg / #FE2E2E pill text+border",
+        "#000000 image placeholders",
+        "#FFFFFF cards",
+        "#637381 body"
+      ],
+      "components": [
+        "EyebrowLabel",
+        "H2",
+        "Subhead",
+        "ConfidentialPill (badge)",
+        "MediaCard (image top + title + body)"
+      ],
+      "notes": "Black rectangles are placeholders for report screenshots/illustrations. Cards have ~16-20px radius and soft shadow."
+    },
+    {
+      "name": "White band — 'Continuous credential defense across your organization'",
+      "description": "White section. Purple eyebrow 'IDENTITY THREAT PROTECTION FOR TEAMS', centered H2 (2 lines), centered subhead. Then 5 feature cards laid out as top row of 3 + centered second row of 2. Each card: light gray (#F2F2F2/#F6F6F6) rounded panel, a rounded-square icon tile (white with purple line icon) centered at top, a bold title, and a gray paragraph. Cards: bell = 'Continuous domain monitoring & alerting', search = 'Employee & contractor exfiltrate detection', grid = 'Domain-account & password-reuse detection', card = 'Centralized security command center' (the 5th title continues).",
+      "layout": "Centered heading + 3-then-2 centered card grid",
+      "keyColors": [
+        "#FFFFFF bg",
+        "#7C30F7 eyebrow & icons",
+        "#F2F2F2 card bg",
+        "#0E0A2C titles",
+        "#637381 body",
+        "icon tile border ~#ECE8FF"
+      ],
+      "components": [
+        "EyebrowLabel",
+        "H2",
+        "Subhead",
+        "FeatureCard (icon tile + title + body)",
+        "IconTile"
+      ],
+      "notes": "Icon tiles are ~64px rounded-square, white fill, thin light-purple border, purple stroke icon. Cards centered with even gaps; second row of 2 is horizontally centered under the 3."
+    },
+    {
+      "name": "Gray band — 'How the free domain scan works'",
+      "description": "Light gray (#F6F6F6) band. Purple eyebrow 'SAFE BY DESIGN', centered H2. Then a large split panel: LEFT half solid vivid purple (#7C30F7/#8145FF) placeholder (for an illustration/screenshot), RIGHT half dark (#1E1E1E/#222222) containing 3 numbered/checkmark steps: 'You enter your business email', 'We check external dark web sources', 'You get a confidential report', each with a circular check icon and a gray body paragraph.",
+      "layout": "Centered heading + 50/50 split panel (purple left, dark right list)",
+      "keyColors": [
+        "#F6F6F6 bg",
+        "#7C30F7 purple panel",
+        "#1E1E1E/#222222 dark panel",
+        "#FFFFFF step titles",
+        "#B4B4B4 step body",
+        "circle check ~#3A3A3A/#626262"
+      ],
+      "components": [
+        "EyebrowLabel",
+        "H2",
+        "SplitPanel",
+        "StepItem (check circle + title + body)"
+      ],
+      "notes": "Panel has ~16px outer radius; the two halves meet flush. Check circles are subtle dark filled with lighter check glyph."
+    },
+    {
+      "name": "White band — FAQ 'Teams ask. We answer.'",
+      "description": "White section, left/right two-column layout. LEFT: bold H2 'Teams ask.\\nWe answer.' + small gray subtext 'Read on to frequently asked questions about PureVPN teams'. RIGHT: vertical FAQ accordion list of 6 questions, each a row with question text + circular outline plus (+) toggle on the right, separated by hairline dividers. Questions: 'How does a domain scan work without network integration or agents?', 'Is it safe to enter my business email?', 'How often is the dark web data updated?', 'What's the difference between an infrastructure breach and an infostealer leak?', 'Will this alert the exposed employees or trigger anything?', 'What do I actually get, and what does it cost?'",
+      "layout": "2-col: sticky left title / right accordion list",
+      "keyColors": [
+        "#FFFFFF bg",
+        "#0E0A2C question text & title",
+        "#637381 subtext",
+        "#191D25 plus-icon ring",
+        "#DFDCDC dividers"
+      ],
+      "components": [
+        "H2",
+        "Subhead",
+        "FaqItem (question + toggle)",
+        "IconButtonCircle (+ / −)",
+        "Divider"
+      ],
+      "notes": "Plus toggles are thin-stroke circular outline icons (~28px). Each FAQ row ~ padding 24-28px vertical."
+    },
+    {
+      "name": "Footer (dark)",
+      "description": "Full-width dark #222222 footer. Top row: white PureVPN logo (circle mark) left, social icon circles right (Facebook, Twitter/X, Instagram, YouTube, Reddit, Discord). Hairline divider. Then link columns: 'Solutions' (Dedicated IPs, Port Forwarding, Remote Access VPN, Team Server), 'Industries' (Healthcare, IT Consulting & MSP, Software Teams, Fintech), 'Industries' (Case Studies, Pricing, Blog), and a right-side CTA block 'Check your security in one click, Fast. Simple. Effective.' with an email input + 'Scan Now' purple button and fine print. Bottom: hairline + copyright '© 2026 PureVPN. All rights reserved... info@purevpn.com'.",
+      "layout": "Logo+socials row / 4-column link+CTA grid / copyright row",
+      "keyColors": [
+        "#222222 bg",
+        "#FFFFFF logo & headings",
+        "#B4B4B4/#989898 links & fine print",
+        "social circles ~#333/#3A3A3A",
+        "#7C30F7 Scan Now button",
+        "input bg ~#313745"
+      ],
+      "components": [
+        "FooterLogo",
+        "SocialIconCircle",
+        "FooterLinkColumn",
+        "FooterCTA (input + button)",
+        "Divider",
+        "CopyrightRow"
+      ],
+      "notes": "Social icons are ~44px gray filled circles with white glyphs. Email input is dark pill with inline purple 'Scan Now' button (reuses DomainInputGroup pattern from hero)."
+    }
+  ],
+  "typography": [
+    {
+      "role": "hero-h1",
+      "approxSizePx": "~58-64px",
+      "weight": "700 (Bold)",
+      "colorHex": "#FFFFFF (line 2 red #FF0000)"
+    },
+    {
+      "role": "section-h2",
+      "approxSizePx": "~40-46px",
+      "weight": "700 (Bold)",
+      "colorHex": "#0E0A2C"
+    },
+    {
+      "role": "faq-title-h2",
+      "approxSizePx": "~40px",
+      "weight": "700 (Bold)",
+      "colorHex": "#0E0A2C"
+    },
+    {
+      "role": "stat-number",
+      "approxSizePx": "~52-58px",
+      "weight": "700 (Bold)",
+      "colorHex": "#0E0A2C"
+    },
+    {
+      "role": "card-title",
+      "approxSizePx": "~22-24px",
+      "weight": "700 (Bold/SemiBold)",
+      "colorHex": "#0E0A2C"
+    },
+    {
+      "role": "eyebrow-label",
+      "approxSizePx": "~14px, uppercase, +letterspacing",
+      "weight": "600 (SemiBold)",
+      "colorHex": "#7C30F7"
+    },
+    {
+      "role": "trust-label",
+      "approxSizePx": "~14px, uppercase",
+      "weight": "600",
+      "colorHex": "#8E7A9D (on dark) / muted"
+    },
+    {
+      "role": "subhead / body",
+      "approxSizePx": "~17-18px",
+      "weight": "400 (Regular)",
+      "colorHex": "#637381"
+    },
+    {
+      "role": "hero-subtext",
+      "approxSizePx": "~18px",
+      "weight": "400",
+      "colorHex": "#B4B4B4 / lavender-gray"
+    },
+    {
+      "role": "stat-caption",
+      "approxSizePx": "~15px",
+      "weight": "400",
+      "colorHex": "#637381"
+    },
+    {
+      "role": "bullet-item",
+      "approxSizePx": "~16px",
+      "weight": "400",
+      "colorHex": "#313745"
+    },
+    {
+      "role": "button-label",
+      "approxSizePx": "~16-18px",
+      "weight": "600 (SemiBold)",
+      "colorHex": "#FFFFFF"
+    },
+    {
+      "role": "nav-link",
+      "approxSizePx": "~16px",
+      "weight": "500 (Medium)",
+      "colorHex": "#1E1E1E"
+    },
+    {
+      "role": "flow-chip-label",
+      "approxSizePx": "~15px",
+      "weight": "500",
+      "colorHex": "#FFFFFF"
+    },
+    {
+      "role": "confidential-pill",
+      "approxSizePx": "~13-14px, uppercase",
+      "weight": "600",
+      "colorHex": "#FE2E2E"
+    },
+    {
+      "role": "highlight-callout",
+      "approxSizePx": "~28-32px",
+      "weight": "700",
+      "colorHex": "#0E0A2C with #FF0000 span"
+    },
+    {
+      "role": "footer-heading",
+      "approxSizePx": "~18px",
+      "weight": "600",
+      "colorHex": "#FFFFFF"
+    },
+    {
+      "role": "footer-link / caption",
+      "approxSizePx": "~15px",
+      "weight": "400",
+      "colorHex": "#B4B4B4 / #989898"
+    }
+  ],
+  "reusableComponents": [
+    {
+      "name": "PillButton",
+      "description": "Fully-rounded solid purple CTA (Get started, Free Check, Scan Now, Free Check).",
+      "variants": "primary purple #7C30F7 solid; sizes: nav-sm, hero-md, inline (inside input group). Also secondary text-only 'Login'."
+    },
+    {
+      "name": "DomainInputGroup",
+      "description": "Rounded pill container holding a text input + inline PillButton. Used in hero (dark translucent #35324D) and footer (dark #313745).",
+      "variants": "hero (large, dark translucent), footer (compact, dark)"
+    },
+    {
+      "name": "EyebrowLabel",
+      "description": "Uppercase letterspaced small label above headings.",
+      "variants": "purple #7C30F7 (light sections); muted lavender #8E7A9D (hero on dark)"
+    },
+    {
+      "name": "StatBlock",
+      "description": "Large number + small gray caption, with optional vertical divider.",
+      "variants": "on white; on gray #F6F6F6; both in 4-up rows"
+    },
+    {
+      "name": "ComparisonCard",
+      "description": "Rounded card with eyebrow + title + green-check bullet list.",
+      "variants": "lavender #ECE8FF (budgeting-for) vs gray #F6F6F6 (in-progress)"
+    },
+    {
+      "name": "CheckBullet",
+      "description": "Green filled circle check + text line.",
+      "variants": "green #00BA00 (comparison lists); dark subtle circle check (how-it-works steps)"
+    },
+    {
+      "name": "FeatureCard",
+      "description": "Light gray rounded panel with white icon tile + title + body, centered.",
+      "variants": "5 instances, identical style, different purple line icon (bell, search, grid, card...)"
+    },
+    {
+      "name": "IconTile",
+      "description": "Rounded-square white tile with thin light-purple border and purple stroke icon.",
+      "variants": "~64px feature-card size"
+    },
+    {
+      "name": "MediaCard",
+      "description": "White card with black media placeholder on top + title + paragraph.",
+      "variants": "3-up 'what your scan unlocks' row"
+    },
+    {
+      "name": "FlowChip + ArrowConnector",
+      "description": "Translucent rounded pill with emoji + label, joined by arrow glyphs, inside the purple flow bar.",
+      "variants": "4 chips in sequence"
+    },
+    {
+      "name": "FaqItem",
+      "description": "Accordion row: question text + circular +/- toggle, hairline divider.",
+      "variants": "collapsed (+); expanded (−) implied"
+    },
+    {
+      "name": "Badge/Pill",
+      "description": "Small rounded status pill.",
+      "variants": "ConfidentialPill (pink #FFDADA bg, red #FE2E2E border/text); TrustLabel (plain)"
+    },
+    {
+      "name": "SplitPanel",
+      "description": "Two-tone panel: solid purple illustration half + dark step-list half.",
+      "variants": "how-it-works"
+    },
+    {
+      "name": "SocialIconCircle",
+      "description": "Filled gray circle with white social glyph.",
+      "variants": "6 socials in footer"
+    },
+    {
+      "name": "VerticalDivider / Hairline",
+      "description": "Thin separator.",
+      "variants": "vertical (between stats); horizontal (nav, footer, faq, hero trust)"
+    },
+    {
+      "name": "NavBar",
+      "description": "Logo + center links (with carets) + right actions.",
+      "variants": "desktop full; mobile hamburger implied"
+    }
+  ],
+  "charts": [
+    "No true data charts. Only: (a) the 4-up stat/metric rows (big-number KPIs, not graphs), and (b) the horizontal infostealer 'flow' diagram (4 chips + arrows) which reads as a process/pipeline graphic, not a chart."
+  ],
+  "assetsNeeded": [
+    {
+      "name": "purevpn-logo-color",
+      "type": "logo",
+      "note": "Purple gradient shield mark + 'purevpn' wordmark (dark) for nav"
+    },
+    {
+      "name": "purevpn-logo-white",
+      "type": "logo",
+      "note": "White circle-mark version for dark footer"
+    },
+    {
+      "name": "partner-logo-samsung",
+      "type": "partner-logo",
+      "note": "White monochrome"
+    },
+    {
+      "name": "partner-logo-hellorache",
+      "type": "partner-logo",
+      "note": "White"
+    },
+    {
+      "name": "partner-logo-sitecore",
+      "type": "partner-logo",
+      "note": "White"
+    },
+    {
+      "name": "partner-logo-hiive",
+      "type": "partner-logo",
+      "note": "White, hexagon mark"
+    },
+    {
+      "name": "partner-logo-ruby-ribbon",
+      "type": "partner-logo",
+      "note": "White"
+    },
+    {
+      "name": "partner-logo-kd",
+      "type": "partner-logo",
+      "note": "White 'KD_' mark"
+    },
+    {
+      "name": "partner-logo-bending-spoons",
+      "type": "partner-logo",
+      "note": "White with infinity glyph"
+    },
+    {
+      "name": "hero-glow",
+      "type": "background",
+      "note": "Purple radial/linear bloom for hero top-right (#7C30F7→#0E0A2C)"
+    },
+    {
+      "name": "report-screenshot-1/2/3",
+      "type": "illustration",
+      "note": "Currently black placeholders in the 3 MediaCards — need product/report screenshots"
+    },
+    {
+      "name": "how-it-works-illustration",
+      "type": "illustration",
+      "note": "Purple left panel placeholder — needs graphic/screenshot"
+    },
+    {
+      "name": "icon-bell / icon-search / icon-grid / icon-card",
+      "type": "icon",
+      "note": "Purple line icons for feature cards"
+    },
+    {
+      "name": "flow-chip-emojis",
+      "type": "icon",
+      "note": "👤 🔑 🦠 🏢 style emoji/icons in flow chips"
+    },
+    {
+      "name": "green-check-icon",
+      "type": "icon",
+      "note": "Filled #00BA00 check for bullets"
+    },
+    {
+      "name": "faq-plus-icon",
+      "type": "icon",
+      "note": "Circular outline +/- toggle"
+    },
+    {
+      "name": "social-icons",
+      "type": "icon",
+      "note": "Facebook, Twitter/X, Instagram, YouTube, Reddit, Discord glyphs"
+    },
+    {
+      "name": "nav-caret-icon",
+      "type": "icon",
+      "note": "Dropdown chevron for nav items"
+    },
+    {
+      "name": "lock-emoji",
+      "type": "icon",
+      "note": "🔒 in confidential pill"
+    }
+  ],
+  "sections_extra": "",
+  "fidelityNotes": [
+    "Hero background is base #0E0A2C (near-black navy) with a large soft purple glow blooming from the upper-right — sampled #2D1E7D / #251968 mid-glow fading to base; best done as a radial-gradient or blurred ellipse, not a hard linear. Matches palette gradient line 56 (#7C30F7 0% → #0E0A2C 100%).",
+    "Hero card + most panels use large corner radii: hero ~24px, feature/media cards ~16-20px, flow bar ~20px, buttons fully rounded (pill).",
+    "Hero red headline line is pure/near-pure red #FF0000 (palette line 19); the highlight callout '440 leaked credential records' uses the same red span. Confidential pill uses softer #FE2E2E text on #FFDADA fill with matching border.",
+    "Hero input group: translucent dark fill (#35324D-ish, ~#D9D9D933 overlay feel) with a subtle 1px inner border; the inline Free Check button is solid #7C30F7.",
+    "Flow bar: horizontal gradient from vivid purple left (#782FEF≈#7C30F7) to dark navy right (#0E0A2C); chips are semi-transparent white/purple pills (#FFFFFF at low opacity) with faint 1px borders and a soft glow — arrows are muted white.",
+    "Green check circles are solid #00BA00 with white check; consistent ~20px.",
+    "Section backgrounds alternate #FFFFFF and #F6F6F6 — keep the exact #F6F6F6 for gray bands (palette line 17). Feature cards sit on white but are #F2F2F2 (line 76).",
+    "Comparison cards: left is lavender #ECE8FF (line 44), right is #F6F6F6 — subtle tint difference, easy to lose.",
+    "Cards carry soft, low-opacity drop shadows (large blur, low alpha) rather than borders; media cards especially.",
+    "Feature icon tiles: white fill, very light purple/lavender 1px border (#ECE8FF/#EAE4EF), purple stroke icon.",
+    "Footer #222222 (line 3); social circles slightly lighter (~#333). Dividers are ~1px white at low opacity.",
+    "Dividers between stats are thin #D9D9D9/#DFDCDC vertical rules, not full-height — inset with padding.",
+    "Watch letter-spacing on all uppercase eyebrow/label text (positive tracking); headings use tight tracking.",
+    "How-it-works split panel: left solid #7C30F7 (or #8145FF), right #1E1E1E/#222222 — flush seam, single outer radius."
+  ],
+  "interactions": [
+    "Nav dropdowns: Solutions / Use Cases / Industries have caret → open mega/dropdown menus on hover/click.",
+    "Domain input (hero + footer): type domain/email, submit via Free Check / Scan Now; validation state ('Please enter a valid email.' appears in footer).",
+    "FAQ accordion: click a row or its +/- toggle to expand/collapse the answer; icon rotates + to −.",
+    "Buttons: hover states on all PillButtons (darken/lighten purple), Login text link hover.",
+    "Feature/media/comparison cards: likely subtle hover elevation.",
+    "Social icons: hover state in footer.",
+    "Flow chips are static (informational), no interaction expected.",
+    "Sticky nav likely on scroll."
+  ],
+  "responsiveNotes": "Desktop-first design. Mobile adaptations: nav collapses to logo + hamburger (links into drawer), Get started may stay. Hero content becomes single-column full-width, headline scales down (~36-40px), input group stacks input above full-width button. All 4-up stat rows collapse to 2x2 then 1-column, dropping vertical dividers (switch to horizontal dividers or spacing). Comparison cards stack vertically. Flow bar wraps chips vertically with downward arrows (or horizontal scroll). 3-up media cards and 5 feature cards reflow to 1-column (feature 3+2 becomes single column). How-it-works split panel stacks (purple illustration on top, step list below). FAQ becomes single column with the 'Teams ask' title above the accordion. Footer columns stack; email CTA goes full-width. Maintain ~24px side padding on mobile, container max-width ~1200px on desktop."
+}

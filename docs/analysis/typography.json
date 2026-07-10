@@ -1,0 +1,101 @@
+{
+  "fontFamily": "Plus Jakarta Sans",
+  "scale": [
+    {
+      "role": "display",
+      "sizePx": "52px",
+      "lineHeightPx": "56px",
+      "weight": "800",
+      "letterSpacing": "-0.02em",
+      "usage": "Landing hero headlines (hero-passwords \"Your employees' passwords are already on the dark web.\") and the largest KPI figures (88%, 440, 266, 256, 155) which render at this size in 700-800. ExtraBold. White on dark navy/black hero; near-black (#0F1222) on light. Accent phrases recolored inline (red/green)."
+    },
+    {
+      "role": "h1",
+      "sizePx": "40px",
+      "lineHeightPx": "46px",
+      "weight": "700",
+      "letterSpacing": "-0.02em",
+      "usage": "Marketing section headings (\"Your Company's Logins Are Already Moving Across the Dark Web\", \"See what's exposed…\"). Bold. App/report page titles (\"Identity theft protection\", \"eczacibasi.com.tr — Credential Exposure Report\") use a compact 32-34px variant of this role at weight 700-800."
+    },
+    {
+      "role": "h2",
+      "sizePx": "28px",
+      "lineHeightPx": "36px",
+      "weight": "700",
+      "letterSpacing": "-0.01em",
+      "usage": "Sub-section headings (\"Executive Summary\", \"Exposure by Infection Vector / Feed Source\", \"Critical: Corporate Email Credentials\"). Bold, near-black or white."
+    },
+    {
+      "role": "h3",
+      "sizePx": "22px",
+      "lineHeightPx": "30px",
+      "weight": "600",
+      "letterSpacing": "-0.01em",
+      "usage": "Panel/section titles (\"Employee exposure\"), feature card headings. SemiBold, #0F1222 / white."
+    },
+    {
+      "role": "h4",
+      "sizePx": "18px",
+      "lineHeightPx": "26px",
+      "weight": "600",
+      "letterSpacing": "0",
+      "usage": "Nav tabs (active tab 600 in brand purple #6D28D9), smaller card titles, emphasized stat/metric labels. SemiBold."
+    },
+    {
+      "role": "body-lg",
+      "sizePx": "18px",
+      "lineHeightPx": "28px",
+      "weight": "400",
+      "letterSpacing": "0",
+      "usage": "Hero sub-copy and lead paragraphs (\"One scan shows every company login already leaked on the dark web…\"). Regular; muted lavender/gray on dark, #4B5563 on light."
+    },
+    {
+      "role": "body",
+      "sizePx": "16px",
+      "lineHeightPx": "24px",
+      "weight": "400",
+      "letterSpacing": "0",
+      "usage": "Default paragraph text, table primary cells (person names use 500), form/stat labels (\"Total records\"). Regular 400; secondary descriptions in #6B7280."
+    },
+    {
+      "role": "body-sm",
+      "sizePx": "14px",
+      "lineHeightPx": "20px",
+      "weight": "400",
+      "letterSpacing": "0",
+      "usage": "Secondary/helper text, table meta and email rows (faheem@purevpn.com), section subtitles (\"Details on employee exposure including identified risks…\"). Regular, muted gray."
+    },
+    {
+      "role": "caption",
+      "sizePx": "12px",
+      "lineHeightPx": "16px",
+      "weight": "400",
+      "letterSpacing": "0",
+      "usage": "Footnotes, timestamps, and disclaimers (\"Figures shown are from an anonymized real scan\", \"Report generated / Records analyzed\" metadata). 400, or 500 for inline metadata keys."
+    },
+    {
+      "role": "label/overline",
+      "sizePx": "12px",
+      "lineHeightPx": "16px",
+      "weight": "700",
+      "letterSpacing": "0.08em",
+      "usage": "ALL-CAPS tracked eyebrows and column headers. Eyebrows in brand purple (\"DARK WEB EXPOSURE ASSESSMENT FOR BUSINESS\") or red (\"CONFIDENTIAL — INTERNAL SECURITY USE ONLY\"). Table column headers (\"TYPE\", \"SOURCE\", \"SOURCE TYPE\", \"EMAIL\", \"APPLICATION\") ~13px at 600 in muted gray. Uppercase + positive tracking is the defining trait."
+    },
+    {
+      "role": "button",
+      "sizePx": "16px",
+      "lineHeightPx": "24px",
+      "weight": "600",
+      "letterSpacing": "0.005em",
+      "usage": "CTA button labels (\"Scan Company Domain →\", \"Free Check\", \"Get Report\"). SemiBold, sentence case (not uppercase), on green/purple filled buttons; white text."
+    }
+  ],
+  "weightsUsed": [
+    "400",
+    "500",
+    "600",
+    "700",
+    "800"
+  ],
+  "notes": "Measurement method: cap-heights and x-heights sampled per screen, then halved (exports are ~2x). Calibrated against Plus Jakarta Sans metrics (cap 0.73em, x-height 0.536em). hero-passwords is 3582x1352 (~1791 CSS), home-landing/report 2880w (~1440 CSS), dashboard 3200x2000 (~1600 CSS).\\n\\nWeight mapping (Plus Jakarta 200-800): ExtraBold 800 = hero display headlines and the big KPI numbers (256, 88%, 440) — the heaviest, most compressed type in the system. Bold 700 = all marketing/report section headings (h1/h2) and the tracked all-caps overlines/table headers. SemiBold 600 = panel titles (h3/h4), nav tabs, card titles, and buttons. Medium 500 = table primary cells (names), nav items, chips/badges, and light emphasis in body. Regular 400 = all paragraph, secondary, caption, and helper text. ExtraLight/Light (200/300) and italics were NOT observed in these four screens — reserve them for optional fine print / quotes only.\\n\\nAll-caps + letter-spacing: only two things are uppercase — the colored eyebrow labels (purple on marketing/hero, red on the report's CONFIDENTIAL banner) and table column headers. Both carry positive tracking (~+0.06 to +0.10em). Everything else is sentence case, including buttons.\\n\\nLetter-spacing philosophy: tighten as size grows (display/h1 ~-0.02em, h2/h3 ~-0.01em), neutral at body, and open up (+tracking) only for the small uppercase labels.\\n\\nColor context: marketing/hero + report run on dark backgrounds (white headings, muted lavender/gray body, red & green accent words); the app dashboard is light (near-black #0F1222 headings, #6B7280 secondary, brand purple #6D28D9 for active/interactive, red #DC2626 for critical figures like Infected machines)."
+}

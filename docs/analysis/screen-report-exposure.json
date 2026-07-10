@@ -1,0 +1,398 @@
+{
+  "screen": "report-exposure",
+  "surface": "report",
+  "exportDimensions": "Export 2880×6452 px (~2x). CSS ≈ 1440×3226. Divide all raw px by 2 for CSS. Content column is centered, ~1140 CSS px wide (raw left edge ~305px → 152 CSS; right edge ~2585px → 1292 CSS), leaving ~150px gutters on a 1440 canvas.",
+  "layoutSummary": "Single-column, long-scroll dark-theme security \"document\" (like a printable PDF report rendered on the web). A soft purple radial/linear glow bleeds across the very top of an otherwise near-black (#0B0E14) page. Content is a centered ~1140px column with generous vertical rhythm. Order top-to-bottom: (1) red CONFIDENTIAL pill, (2) red kicker label, (3) large white report title, (4) intro paragraph, (5) full-width dark meta strip with 4 inline label/value pairs, (6) Executive Summary heading + paragraph + a 4-up stat-card row (each card with a colored top accent), (7) red-tinted \"Highest priority\" callout bar, (8) a 2-column charts region (left: red→orange infection-vector horizontal bars; right: blue application horizontal bars) each in its own bordered panel, (9) \"Critical: Corporate Email Credentials\" data table, (10) \"Corporate Usernames & Domain Accounts\" data table. Tables are card-wrapped with a header row and rounded pill-like data rows.",
+  "sections": [
+    {
+      "name": "Top purple glow / background",
+      "description": "Ambient decorative lighting: a purple gradient glow washes the top ~140px (CSS) of the page, brightest center-top, fading into the near-black page. Sampled blend ~#231A5E over base; matches Figma linear-gradient(90.38deg, #7C30F7 0.1% → #0E0A2C 100%) and the purple family (#7C30F7 / #2E0E3F / #0E0A2C). Rest of page is flat #0B0E14 (slightly warmer #0D101B directly under the glow).",
+      "layout": "full-bleed background layer behind centered content",
+      "components": [
+        "page background",
+        "purple glow gradient"
+      ],
+      "keyColors": [
+        "#0B0E14",
+        "#0D101B",
+        "#7C30F7",
+        "#0E0A2C",
+        "#2E0E3F"
+      ],
+      "notes": "Glow should be a large soft radial or angled linear gradient, heavy blur, low-ish opacity, clipped to top. Only appears at top; no glow elsewhere."
+    },
+    {
+      "name": "CONFIDENTIAL banner pill",
+      "description": "Small rounded rectangle, dark-red fill (#432121) with a solid red 1px border and uppercase red text 'CONFIDENTIAL — INTERNAL SECURITY USE ONLY'. Left-aligned to the content column.",
+      "layout": "inline-block pill, left-aligned",
+      "components": [
+        "alert pill"
+      ],
+      "keyColors": [
+        "#432121",
+        "#FF0000",
+        "#FF5C5C",
+        "#FE2E2E"
+      ],
+      "notes": "Radius ~6px CSS. Padding ~6px 12px. Text ~11px, uppercase, semibold, red. Border ~1px solid red at reduced brightness."
+    },
+    {
+      "name": "Kicker label",
+      "description": "'DARK WEB EXPOSURE ASSESSMENT' in red, uppercase, letter-spaced, sits above the title.",
+      "layout": "left-aligned single line",
+      "components": [
+        "eyebrow/kicker label"
+      ],
+      "keyColors": [
+        "#FF5C5C",
+        "#FF5C47"
+      ],
+      "notes": "~13px, weight 600-700, letter-spacing ~0.08em."
+    },
+    {
+      "name": "Report title",
+      "description": "'eczacibasi.com.tr — Credential Exposure Report' large white bold headline.",
+      "layout": "left-aligned, single line (wraps on narrow)",
+      "components": [
+        "page headline"
+      ],
+      "keyColors": [
+        "#FFFFFF"
+      ],
+      "notes": "~32px CSS, weight 700-800. The domain segment and the rest share the same style."
+    },
+    {
+      "name": "Intro paragraph",
+      "description": "Two-line muted-gray body paragraph describing the data source (infostealer/breach findings, values normalized, passwords masked).",
+      "layout": "left-aligned, full column width",
+      "components": [
+        "body paragraph"
+      ],
+      "keyColors": [
+        "#808080",
+        "#B4B4B4"
+      ],
+      "notes": "~13px, weight 400, line-height ~1.5, muted gray."
+    },
+    {
+      "name": "Meta strip",
+      "description": "Full-width dark rounded bar (#191D25) with four inline label:value pairs — 'Report generated: 03 July 2026', 'Records analyzed: 440', 'Exposure window: 2020-10-03 → 2026-02-17', 'Password handling: masked throughout this document'. Labels muted gray, values white/semibold.",
+      "layout": "horizontal row, space-between, single line",
+      "components": [
+        "meta bar",
+        "label/value pair"
+      ],
+      "keyColors": [
+        "#191D25",
+        "#808080",
+        "#FFFFFF"
+      ],
+      "notes": "Radius ~8px, padding ~14px 20px. Faint hairline separators optional. Label ~12px gray, value ~13px white semibold."
+    },
+    {
+      "name": "Executive Summary block",
+      "description": "Section heading 'Executive Summary' (white bold) + a two-line muted paragraph, then a 4-up stat-card row.",
+      "layout": "heading + paragraph stacked, then 4-column grid",
+      "components": [
+        "section heading",
+        "body paragraph",
+        "stat card x4"
+      ],
+      "keyColors": [
+        "#FFFFFF",
+        "#808080",
+        "#191D25"
+      ],
+      "notes": "Heading ~24px bold. Stat row uses equal-width gap ~16px cards."
+    },
+    {
+      "name": "Stat cards (4)",
+      "description": "Four equal dark cards (#191D25) each with a thin colored TOP accent border matching its number color. Big number top-left, small muted caption below. Card1: 155 red-orange (#FF5C47) 'Unique corporate email identities'; Card2: 111 orange (#FFB454) 'Unique username / domain identities'; Card3: 105 blue (#5CC8FF) 'Applications / host labels observed'; Card4: 440 white (#FFFFFF) 'Total credential records'.",
+      "layout": "4-col equal grid",
+      "components": [
+        "stat card"
+      ],
+      "keyColors": [
+        "#191D25",
+        "#FF5C47",
+        "#FFB454",
+        "#5CC8FF",
+        "#FFFFFF",
+        "#808080"
+      ],
+      "notes": "Radius ~10px. Colored top edge ~2-3px (or top-border only). Number ~28-30px bold colored; caption ~12px muted gray. Padding ~18px 20px."
+    },
+    {
+      "name": "Highest priority callout",
+      "description": "Full-width dark red-tinted bar (#191218, warmer than page) with a red left accent border. Bold white lead-in 'Highest priority:' then muted body text about reviewing valid corporate emails, Windows/domain accounts, admin usernames, VPN/ADFS/SAP/Jira/Confluence records, reused passwords.",
+      "layout": "full-width banner with left border",
+      "components": [
+        "callout / alert banner"
+      ],
+      "keyColors": [
+        "#191218",
+        "#432121",
+        "#FF5C5C",
+        "#FFFFFF",
+        "#B4B4B4"
+      ],
+      "notes": "Left border ~3-4px red. Radius ~8px. 'Highest priority:' bold white ~13px; rest muted ~13px."
+    },
+    {
+      "name": "Charts region (2-column)",
+      "description": "Two side-by-side blocks. LEFT: heading 'Exposure by Infection Vector / Feed Source' + muted 4-line paragraph + a bordered chart panel of 12 horizontal bars with red→orange gradient fills, category labels at left, numeric values right-aligned (133, 94, 54, 41, 38, 36, 24, 9, 6, 3, 2). RIGHT: heading 'Exposure by Application / Host Surface' + muted 2-line paragraph + a bordered chart panel of horizontal bars in solid light-blue (#70CFFE) with the same value ladder.",
+      "layout": "2-col; each col = heading + paragraph + chart card",
+      "components": [
+        "section heading",
+        "body paragraph",
+        "horizontal bar chart card"
+      ],
+      "keyColors": [
+        "#FFFFFF",
+        "#808080",
+        "#191D25",
+        "#FF5D5C",
+        "#FFB454",
+        "#70CFFE",
+        "#5CC8FF"
+      ],
+      "notes": "Chart panels are dark (#191D25) with subtle 1px border, radius ~10px. Each bar sits on a darker track. Left chart bars use gradient #FF5D5C→#FFB454; right chart bars solid #70CFFE."
+    },
+    {
+      "name": "Critical: Corporate Email Credentials table",
+      "description": "Heading (white bold) + muted one-line note, then a card-wrapped table. Header row columns: EMAIL, APPLICATION, SERVICE / URL, PASSWORD (uppercase muted, letter-spaced). Data rows show masked emails (f********r@destek.eczacibasi.com.tr), application names, URLs rendered as blue links (or '—'), and masked passwords (F******6). Rows appear as separated rounded pill-rows.",
+      "layout": "4-column table inside a rounded card; header row + stacked data rows",
+      "components": [
+        "table card",
+        "table header",
+        "table row",
+        "link cell",
+        "masked value"
+      ],
+      "keyColors": [
+        "#343B4B",
+        "#313745",
+        "#191D25",
+        "#70CFFE",
+        "#FFFFFF",
+        "#808080"
+      ],
+      "notes": "Card radius ~12px. Header bg slightly lighter (#343B4B). Data rows have subtle fill #313745/#343B4B with rounding ~10px and vertical gaps between rows. Links #70CFFE, no underline. Header text ~12px uppercase muted; cell text ~13px."
+    },
+    {
+      "name": "Corporate Usernames & Domain Accounts table",
+      "description": "Same table pattern. Columns: USERNAME, TYPE, APPLICATION, SERVICE / URL. Masked usernames, TYPE values ('Username', 'Untracked URL'), application labels (some as blue links), URL/service cell.",
+      "layout": "4-column table inside rounded card",
+      "components": [
+        "table card",
+        "table header",
+        "table row",
+        "link cell",
+        "masked value"
+      ],
+      "keyColors": [
+        "#343B4B",
+        "#313745",
+        "#191D25",
+        "#70CFFE",
+        "#FFFFFF",
+        "#808080"
+      ],
+      "notes": "Identical styling to the emails table; only column set differs."
+    }
+  ],
+  "typography": [
+    {
+      "role": "headline (report title)",
+      "approxSizePx": "32",
+      "weight": "700-800",
+      "colorHex": "#FFFFFF"
+    },
+    {
+      "role": "section heading (Executive Summary, chart titles, table titles)",
+      "approxSizePx": "24",
+      "weight": "700",
+      "colorHex": "#FFFFFF"
+    },
+    {
+      "role": "kicker / eyebrow label",
+      "approxSizePx": "13",
+      "weight": "600-700",
+      "colorHex": "#FF5C5C"
+    },
+    {
+      "role": "banner pill text",
+      "approxSizePx": "11",
+      "weight": "600",
+      "colorHex": "#FF5C5C"
+    },
+    {
+      "role": "body paragraph",
+      "approxSizePx": "13",
+      "weight": "400",
+      "colorHex": "#808080"
+    },
+    {
+      "role": "callout body",
+      "approxSizePx": "13",
+      "weight": "400",
+      "colorHex": "#B4B4B4"
+    },
+    {
+      "role": "callout lead-in (bold)",
+      "approxSizePx": "13",
+      "weight": "700",
+      "colorHex": "#FFFFFF"
+    },
+    {
+      "role": "meta label",
+      "approxSizePx": "12",
+      "weight": "400",
+      "colorHex": "#808080"
+    },
+    {
+      "role": "meta value",
+      "approxSizePx": "13",
+      "weight": "600",
+      "colorHex": "#FFFFFF"
+    },
+    {
+      "role": "stat number",
+      "approxSizePx": "29",
+      "weight": "700",
+      "colorHex": "#FF5C47 / #FFB454 / #5CC8FF / #FFFFFF"
+    },
+    {
+      "role": "stat caption",
+      "approxSizePx": "12",
+      "weight": "400",
+      "colorHex": "#808080"
+    },
+    {
+      "role": "table header",
+      "approxSizePx": "12",
+      "weight": "500",
+      "colorHex": "#808080"
+    },
+    {
+      "role": "table cell value",
+      "approxSizePx": "13",
+      "weight": "400",
+      "colorHex": "#FFFFFF"
+    },
+    {
+      "role": "table cell muted / masked",
+      "approxSizePx": "13",
+      "weight": "400",
+      "colorHex": "#B4B4B4"
+    },
+    {
+      "role": "link cell",
+      "approxSizePx": "13",
+      "weight": "400",
+      "colorHex": "#70CFFE"
+    },
+    {
+      "role": "chart category label",
+      "approxSizePx": "11",
+      "weight": "400",
+      "colorHex": "#B4B4B4"
+    },
+    {
+      "role": "chart value label",
+      "approxSizePx": "11",
+      "weight": "500",
+      "colorHex": "#B4B4B4"
+    }
+  ],
+  "reusableComponents": [
+    {
+      "name": "AlertPill",
+      "description": "Small rounded red-tinted pill with red border + uppercase red label (CONFIDENTIAL banner).",
+      "variants": "color: red (danger). Could generalize to warning/info tones."
+    },
+    {
+      "name": "KickerLabel",
+      "description": "Uppercase letter-spaced small red eyebrow above a heading.",
+      "variants": "red (default); could be muted/brand variant."
+    },
+    {
+      "name": "MetaBar",
+      "description": "Full-width dark rounded strip holding inline label:value pairs.",
+      "variants": "n-pairs, single-row (desktop) vs stacked (mobile)."
+    },
+    {
+      "name": "StatCard",
+      "description": "Dark card with colored top accent, large colored number, muted caption.",
+      "variants": "accent = red-orange / orange / blue / white (neutral). Number color inherits accent."
+    },
+    {
+      "name": "CalloutBanner",
+      "description": "Tinted full-width banner with left accent border, bold lead-in + muted body.",
+      "variants": "danger (red, shown); likely warning/info variants exist in system."
+    },
+    {
+      "name": "HBarChartCard",
+      "description": "Bordered dark panel with a list of horizontal bars, left category label, right value, on a dark track.",
+      "variants": "fill = red→orange gradient ramp OR solid blue; ranked descending."
+    },
+    {
+      "name": "DataTableCard",
+      "description": "Rounded card wrapping an uppercase muted header row and rounded pill-style data rows.",
+      "variants": "4-column (email set / username set). Cells: text, link, muted/masked, em-dash placeholder."
+    },
+    {
+      "name": "LinkCell / MaskedValue",
+      "description": "Blue non-underlined link cell; masked value (f****r@…, F****6) rendered in muted text.",
+      "variants": "link vs plain-text; masked email / masked password / masked username."
+    },
+    {
+      "name": "SectionHeader",
+      "description": "White bold section title optionally followed by a muted intro paragraph.",
+      "variants": "with/without paragraph."
+    }
+  ],
+  "charts": [
+    "Left: horizontal bar chart, 12 ranked categories (Historical/Public Leak 133, Raccoon 94, Meta 54, Vidar 41, Generic 38, Lumma 36, Stealc 24, Redline 9, Risepro 6, Silencer 3, Taurus 2). Bar fill = linear-gradient(90deg, #FF5D5C 0% → #FFB454 100%) (sampled #FF615C→#FE9557). Bars sit on a dark track (#191D25/#313745). Value labels right-aligned muted. Bar length ∝ value.",
+    "Right: horizontal bar chart, same value ladder (UntrackedURL 133, Www.E-Sanalmagaza.Com 94, ...54, Portal 41, Jira 38, ADFS 36, Login.Microsofthome.Com 24, Asx.Eczacibasi.Com.Tr 9, ...6, EBFlow 3, ...2). Bar fill = solid light blue #70CFFE. Same dark track and right-aligned muted value labels.",
+    "Both charts are non-axis 'ranked bar' style (no gridlines/x-axis ticks); category name is inside/left of each row, value at far right."
+  ],
+  "assetsNeeded": [
+    {
+      "name": "top-purple-glow",
+      "type": "background gradient",
+      "note": "Decorative purple radial/angled glow at page top; CSS gradient (no image needed). Colors #7C30F7 → #0E0A2C."
+    },
+    {
+      "name": "no-logos",
+      "type": "note",
+      "note": "No PureVPN logo, partner logos, or illustrations appear on this report screen."
+    },
+    {
+      "name": "no-icons",
+      "type": "note",
+      "note": "No visible iconography (no lock/shield/copy glyphs rendered). Copy-to-clipboard affordances, if added, would need icons but none are shown."
+    }
+  ],
+  "fidelityNotes": [
+    "Page base is #0B0E14 (not pure black). Top ~140px CSS has a soft purple glow (#7C30F7→#0E0A2C family) with heavy blur/low opacity — brightest center-top, fades out; do not tint the rest of the page.",
+    "Panel/card surface color is #191D25 (stat cards, meta bar, chart panels). Table surfaces read slightly lighter/bluer: header #343B4B, rows #313745/#343B4B. Callout is a warmer dark #191218.",
+    "Stat cards have a thin COLORED top accent (red-orange #FF5C47, orange #FFB454, blue #5CC8FF, white) — the number color matches the accent. This is the key detail per card.",
+    "Callout has a red LEFT accent border (~3-4px) over a red-tinted dark fill.",
+    "Border radii (CSS): pill ~6px, stat/meta/chart cards ~10px, table cards ~12px, table rows ~10px.",
+    "Borders are subtle 1px hairlines at low opacity (whites like #FFFFFF80 / #D9D9D933 from palette work well for card outlines).",
+    "Left chart bars = horizontal gradient #FF5D5C→#FFB454; right chart bars = flat #70CFFE. Bars have rounded ends and sit on a darker rounded track.",
+    "Links are #70CFFE, no underline. Masked/muted values use #B4B4B4; primary values #FFFFFF; captions/labels #808080.",
+    "Generous vertical spacing between major sections (~48-64px CSS); table rows separated by visible gaps (not zebra-touching).",
+    "Meta values and stat numbers are semibold/bold against 400-weight muted context — weight contrast carries hierarchy more than size."
+  ],
+  "interactions": [
+    "Table link cells (URLs / application names): hover underline or brightness; click opens (or copies) URL.",
+    "Masked values (emails, passwords, usernames): likely a copy-to-clipboard affordance on hover; possibly a reveal/unmask toggle (all shown masked by default).",
+    "Table column headers: potentially sortable (rank/count columns); add hover + sort indicator if implemented.",
+    "Table rows: subtle hover highlight (row fill lightens).",
+    "Charts are static/read-only; optional tooltip on bar hover showing exact count.",
+    "No tabs, dropdowns, or nav present on this document screen; it reads as a scrollable report (print/export-friendly)."
+  ],
+  "responsiveNotes": "Desktop (≥1200px): centered ~1140px column, 4-up stat grid, 2-column charts region, full 4-column tables. Tablet (~768-1199px): stat cards collapse to 2x2; charts stack to one column (each full width); tables keep columns but tighten padding or allow horizontal scroll within an overflow-x container. Mobile (<768px): stat cards go 1-per-row (or 2x2 compact); meta strip wraps its label/value pairs to a vertical stack; charts full-width stacked; tables become the hardest part — either horizontal-scroll the table inside an overflow-x wrapper (page body must never scroll horizontally) or transform each row into a stacked label:value card. Title scales down (~24px), section headings ~20px. Keep the purple top glow but reduce its height on small screens."
+}

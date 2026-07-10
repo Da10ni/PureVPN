@@ -1,0 +1,306 @@
+{
+  "screen": "dashboard-pro-plan",
+  "surface": "dashboard",
+  "exportDimensions": "Exported at 2880x2048 px (~2x). CSS reference frame ≈ 1440x1024 px. Divide all raw pixel measurements below by 2 for CSS px.",
+  "layoutSummary": "Two-column app shell. Fixed left sidebar (~360px raw / 180px CSS wide, white) with logo, vertical nav, and a divider grouping. Right region is a light-gray scroll area (#F9FAFB-ish) containing: a top bar (page title \"Pro Plan\" left, help + notification icons + avatar right), a full-bleed purple \"Coming Soon\" gradient banner, then a centered content column (max ~1360px raw / 680px CSS, left/right gutter ~480px raw from sidebar edge). Content stacks three white rounded cards: (1) big referral hero card with two-column text+illustration, (2) referral-link card with input + Copy button, (3) a \"MORE WAYS TO SHARE\" labeled card with \"Post to LinkedIn\". Generous vertical spacing (~40-48px CSS) between cards.",
+  "sections": [
+    {
+      "name": "Left Sidebar",
+      "description": "Fixed vertical navigation on white. Top: PureVPN logo (rounded-square gradient purple mark with white play/triangle glyph) + 'purevpn' wordmark in dark slate. Below, a stack of nav items each = 24px icon + label. Items: Dashboard, Setup VPN, Downloads, Pro Plan, Earn Free Credits (ACTIVE), Security Tools, then a thin divider, then Account Settings, Subscription, Help Desk. Active item 'Earn Free Credits' sits in a light-lavender rounded pill spanning full sidebar width with purple icon + purple bold label.",
+      "layout": "single-column vertical list, icon+label rows",
+      "components": [
+        "Logo lockup",
+        "SidebarNavItem (default)",
+        "SidebarNavItem (active)",
+        "Divider"
+      ],
+      "keyColors": [
+        "#FFFFFF (bg)",
+        "#7C2FF7 (active icon/text)",
+        "#ECE8FF / #EAE4EF (active pill bg)",
+        "#637381 / #313745 (default label)",
+        "#191D25 (logo wordmark)"
+      ],
+      "notes": "Default labels are muted slate-gray with matching stroke icons; active row is the only filled pill. Row height ~66px raw / 33px CSS, icon-to-label gap ~16px raw. Divider is 1px hairline #EEECEC. Sidebar has a faint right border/shadow separating it from content."
+    },
+    {
+      "name": "Top Bar",
+      "description": "Header row of the content region. Left: page title 'Pro Plan' in large bold dark slate. Right: a chat/help speech-bubble outline icon, a bell notification outline icon, and a circular avatar (empty light-lavender placeholder circle).",
+      "layout": "space-between: title left, icon cluster + avatar right",
+      "components": [
+        "Page title",
+        "IconButton (help)",
+        "IconButton (bell)",
+        "Avatar"
+      ],
+      "keyColors": [
+        "#191D25 / #222222 (title)",
+        "#637381 (icons)",
+        "#EAE4EF / #ECE8FF (avatar fill)"
+      ],
+      "notes": "Icons are thin-stroke gray outline, ~24px CSS. Avatar ~44px raw / 22px CSS diameter. Sits above the banner with white/very-light background."
+    },
+    {
+      "name": "Coming Soon Banner",
+      "description": "Full-width promotional strip below the top bar spanning the content region. Purple gradient fading to white on the right. Center-left white text: bold 'Coming Soon' then a vertical pipe separator, then 'Scan your company domain for leaked passwords, breached accounts & employee exposure.' followed by an emphasized/linked 'Join the waitlist'.",
+      "layout": "single-line centered text band, edge-to-edge",
+      "components": [
+        "GradientBanner",
+        "Inline link"
+      ],
+      "keyColors": [
+        "gradient #7C2FF7 0% -> #9151F8 54.81% -> #FFFFFF 100% (line 55)",
+        "#FFFFFF (text)"
+      ],
+      "notes": "Left edge saturated violet, dissolves into the page background on the right so the right portion of text sits on near-white. Band height ~120px raw / 60px CSS. No border radius (full-bleed within content area). 'Join the waitlist' appears as a lighter/underlined-feel CTA."
+    },
+    {
+      "name": "Referral Hero Card",
+      "description": "Large white rounded card. Two columns. LEFT: headline 'Share Intercom and earn $100' (the 'earn $100' portion in purple), a gray body paragraph explaining the referral (~4 lines), a sub-heading 'What they need to do:', a checklist of 3 items each with a filled purple circular checkmark ('Start a free trial via your referral link.', 'Purchase any paid Intercom plan.', 'Stay subscribed for 2 months.'), and an underlined link 'Referral terms and conditions.'. RIGHT: a 3D illustration of a large dark-purple smartphone showing colorful app tiles (bar chart, heart/health, play button, equalizer, gear), gold dollar coins floating, a seated person with a coral/red shirt using a laptop, and soft lavender leaf shapes behind.",
+      "layout": "2-col: ~55% text left / ~45% illustration right",
+      "components": [
+        "Headline",
+        "Body paragraph",
+        "Section subhead",
+        "ChecklistItem (purple check + label)",
+        "Text link",
+        "Illustration"
+      ],
+      "keyColors": [
+        "#FFFFFF (card)",
+        "#191D25 (headline)",
+        "#7C2FF7 (accent 'earn $100' + checks)",
+        "#637381 / #717171 (body)",
+        "illustration: #2E0E3F/#401656 phone, #FE7062->#FF928E coral shirt, #FFC668/#FFB454/#FFE300 coins, #EAE4EF/#CFC1D8 leaves"
+      ],
+      "notes": "Card corner radius ~24px raw / 12px CSS. Inner padding generous ~64px raw / 32px CSS. Checkmarks are solid-fill purple discs with white tick, ~24px CSS, ~16px gap to label. Very subtle card shadow. Extra vertical gap between paragraph and 'What they need to do:'."
+    },
+    {
+      "name": "Referral Link Card",
+      "description": "White rounded card, single row. LEFT: label 'Your referral link' (bold) with helper text 'Use this link wherever you talk about Intercom.' below. RIGHT: a read-only text input showing 'https://my.purevpn.com/v2/dashboard/refer' followed by a solid purple 'Copy link' button.",
+      "layout": "space-between: label block left, input + button right",
+      "components": [
+        "Field label",
+        "Helper text",
+        "TextInput (readonly)",
+        "Button (primary/copy)"
+      ],
+      "keyColors": [
+        "#FFFFFF (card)",
+        "#191D25 (label)",
+        "#637381 (helper + input text)",
+        "input border #DFDCDC/#EEECEC",
+        "button #7C2FF7 (solid) or gradient #5B3DF5->#7358FF"
+      ],
+      "notes": "Input has 1px light-gray border, ~8px radius, light/white fill, gray placeholder-style URL text. Copy button solid violet, white bold label, ~8px radius. Card radius/padding matches hero card. Button and input vertically centered, small gap ~16px raw between them."
+    },
+    {
+      "name": "More Ways To Share Card",
+      "description": "White rounded card. An eyebrow/overline label 'MORE WAYS TO SHARE' (uppercase, small, tracked, gray) sits just above the card. Inside: heading 'Post to LinkedIn', supporting text 'Recommend Intercom to your network. Your referral link is included automatically.', and a secondary outlined button 'Share on Linkedin' with the blue LinkedIn 'in' logo icon.",
+      "layout": "single column, left-aligned",
+      "components": [
+        "Overline label",
+        "Card heading",
+        "Body text",
+        "Button (secondary/outline with brand icon)"
+      ],
+      "keyColors": [
+        "#FFFFFF (card)",
+        "#191D25 (heading)",
+        "#637381 (body + overline)",
+        "#0B86CA / LinkedIn blue (icon)",
+        "button border #DFDCDC"
+      ],
+      "notes": "Overline is outside/above the card, letter-spaced uppercase ~11px CSS. 'Share on Linkedin' is a white pill button with thin gray border, dark label, and a small blue LinkedIn square icon on the left. Heading noticeably larger than link-card label — more of a section title weight."
+    }
+  ],
+  "typography": [
+    {
+      "role": "page-title (Pro Plan)",
+      "approxSizePx": "30px",
+      "weight": "700",
+      "colorHex": "#191D25"
+    },
+    {
+      "role": "card-headline (Share Intercom and earn $100)",
+      "approxSizePx": "30px",
+      "weight": "700",
+      "colorHex": "#191D25 (with #7C2FF7 accent span)"
+    },
+    {
+      "role": "section-subhead (What they need to do: / Post to LinkedIn)",
+      "approxSizePx": "24px",
+      "weight": "600-700",
+      "colorHex": "#191D25"
+    },
+    {
+      "role": "body (paragraphs, helper, checklist labels)",
+      "approxSizePx": "16px",
+      "weight": "400",
+      "colorHex": "#637381 / #717171"
+    },
+    {
+      "role": "field-label (Your referral link)",
+      "approxSizePx": "16px",
+      "weight": "600",
+      "colorHex": "#191D25"
+    },
+    {
+      "role": "banner-text (Coming Soon | ...)",
+      "approxSizePx": "17px",
+      "weight": "600 for 'Coming Soon' / 400 for rest",
+      "colorHex": "#FFFFFF"
+    },
+    {
+      "role": "button (Copy link / Share on Linkedin)",
+      "approxSizePx": "15px",
+      "weight": "600",
+      "colorHex": "#FFFFFF (copy) / #313745 (share)"
+    },
+    {
+      "role": "overline-label (MORE WAYS TO SHARE)",
+      "approxSizePx": "12px",
+      "weight": "600",
+      "colorHex": "#637381"
+    },
+    {
+      "role": "sidebar-nav-label",
+      "approxSizePx": "16px",
+      "weight": "500 (default) / 600 (active)",
+      "colorHex": "#637381 default, #7C2FF7 active"
+    },
+    {
+      "role": "input-value (referral URL)",
+      "approxSizePx": "15px",
+      "weight": "400",
+      "colorHex": "#637381"
+    },
+    {
+      "role": "text-link (Referral terms and conditions.)",
+      "approxSizePx": "16px",
+      "weight": "500",
+      "colorHex": "#191D25 (underlined)"
+    }
+  ],
+  "reusableComponents": [
+    {
+      "name": "SidebarNavItem",
+      "description": "Icon (24px stroke) + label row, full-width click target with rounded pill hover/active bg.",
+      "variants": "default (gray icon+label, transparent bg), active (purple icon+bold label, #ECE8FF pill bg), hover (light gray pill)"
+    },
+    {
+      "name": "Button",
+      "description": "Rounded ~8px CTA.",
+      "variants": "primary/solid-violet (Copy link, #7C2FF7 fill, white text), secondary/outline (Share on Linkedin, white fill + gray border + dark text + brand icon)"
+    },
+    {
+      "name": "TextInput",
+      "description": "Readonly/text field, 1px gray border, ~8px radius, light fill.",
+      "variants": "readonly (referral link), (default/focus implied)"
+    },
+    {
+      "name": "Card",
+      "description": "White surface, ~12px CSS radius, subtle shadow, 32px inner padding.",
+      "variants": "hero (2-col with illustration), row (label+control), section (heading+body+button)"
+    },
+    {
+      "name": "ChecklistItem",
+      "description": "Filled purple circular checkmark + text label.",
+      "variants": "completed (filled), (unchecked implied — hollow)"
+    },
+    {
+      "name": "IconButton",
+      "description": "Bare stroke icon button in top bar.",
+      "variants": "help/chat bubble, bell"
+    },
+    {
+      "name": "Avatar",
+      "description": "Circular user avatar.",
+      "variants": "empty placeholder (lavender fill), (image)"
+    },
+    {
+      "name": "GradientBanner",
+      "description": "Full-bleed purple->white gradient promo strip with inline CTA link.",
+      "variants": "coming-soon"
+    },
+    {
+      "name": "OverlineLabel",
+      "description": "Uppercase tracked small gray section eyebrow.",
+      "variants": "default"
+    },
+    {
+      "name": "Logo lockup",
+      "description": "Gradient rounded-square mark + wordmark.",
+      "variants": "full (mark+wordmark)"
+    }
+  ],
+  "charts": [
+    "No real data charts. The only chart-like elements are decorative: a bar-chart glyph and an equalizer glyph rendered as flat icons inside the illustration's phone app tiles — not data-driven."
+  ],
+  "assetsNeeded": [
+    {
+      "name": "purevpn-logo-mark",
+      "type": "logo",
+      "note": "Rounded-square gradient purple app icon with white play/triangle glyph"
+    },
+    {
+      "name": "purevpn-wordmark",
+      "type": "logo",
+      "note": "'purevpn' lowercase dark-slate wordmark"
+    },
+    {
+      "name": "referral-hero-illustration",
+      "type": "illustration",
+      "note": "3D scene: dark-purple smartphone with colorful app tiles, floating gold dollar coins, seated person in coral shirt on laptop, lavender leaf shapes. Single composited PNG/SVG"
+    },
+    {
+      "name": "sidebar-icons",
+      "type": "icon-set",
+      "note": "Dashboard (grid), Setup VPN (shield-gear), Downloads (down-tray), Pro Plan (star), Earn Free Credits (gift), Security Tools (shield-check), Account Settings (user-gear), Subscription (receipt/$), Help Desk (question-hex) — 24px stroke"
+    },
+    {
+      "name": "topbar-icons",
+      "type": "icon-set",
+      "note": "chat/help speech bubble, bell notification"
+    },
+    {
+      "name": "check-circle-icon",
+      "type": "icon",
+      "note": "Filled purple disc with white tick for checklist"
+    },
+    {
+      "name": "linkedin-icon",
+      "type": "brand-icon",
+      "note": "LinkedIn blue rounded-square 'in' mark for Share button"
+    },
+    {
+      "name": "copy-icon",
+      "type": "icon",
+      "note": "Optional copy glyph if button gains one"
+    }
+  ],
+  "fidelityNotes": [
+    "Coming Soon banner is a horizontal gradient that starts saturated violet (#7C2FF7/#9151F8) and fully dissolves to white/transparent on the right (line 55: #7C2FF7 0% -> #9151F8 54.81% -> #FFFFFF 100%). Right-side text therefore sits on a near-white ground — keep white text but ensure the fade reaches page bg.",
+    "Copy link button: solid violet #7C2FF7; may alternatively be the subtle gradient #5B3DF5->#7358FF (line 51). No visible shadow, ~8px radius, bold white label.",
+    "Active sidebar pill uses very light lavender (#ECE8FF/#EAE4EF) — low-contrast, no border; only the active item is filled.",
+    "Cards: ~12px CSS radius, very soft/low-opacity drop shadow (barely visible on the light-gray page). Do not over-darken shadows.",
+    "Page background is a subtle cool off-white (#F9FAFB) that reads slightly darker than the white cards and white sidebar — the contrast between the three whites is delicate.",
+    "Checkmark discs are fully filled purple with a white tick, not outline.",
+    "Illustration has soft shadows/glows under coins and phone; coins use gold gradient (#FFE300/#FFC668/#FFB454). Person shirt uses coral gradient (#FE7062 -> #FF928E, lines 79-86).",
+    "Input border is a 1px hairline light gray (#DFDCDC/#EEECEC); fill is white/near-white, URL text muted gray.",
+    "Text link 'Referral terms and conditions.' is underlined dark slate, not purple.",
+    "Overline 'MORE WAYS TO SHARE' has noticeable letter-spacing and sits ABOVE the card, not inside it.",
+    "'Share on Linkedin' secondary button: white fill, 1px gray border, dark label, blue brand icon — pill/rounded ~8px."
+  ],
+  "interactions": [
+    "Sidebar items: hover -> light pill bg; active route -> lavender pill + purple text (Earn Free Credits shown active).",
+    "Copy link button: click copies referral URL to clipboard, likely shows a 'Copied!' toast/label swap.",
+    "Referral link input: readonly, click-to-select-all typical.",
+    "'Join the waitlist' in banner: link/CTA to waitlist form.",
+    "'Referral terms and conditions.': link to terms.",
+    "'Share on Linkedin': opens LinkedIn share dialog with prefilled referral link.",
+    "Top bar bell/help icons: open notification panel / help/chat widget; avatar opens account menu.",
+    "Banner may be dismissible (no explicit close icon visible, but common)."
+  ],
+  "responsiveNotes": "Desktop (shown): persistent 180px sidebar + centered ~680px CSS content column with wide gutters. Tablet: sidebar can collapse to icon-rail or off-canvas hamburger; content column widens to fill with reduced gutters. Mobile: sidebar becomes an off-canvas drawer/hamburger; banner text wraps to 2-3 lines (keep gradient but allow height to grow); hero card collapses to single column with the illustration moving ABOVE or below the text (often hidden/simplified on small screens); referral-link card stacks vertically (label block, then full-width input, then full-width Copy button); 'Share on Linkedin' button goes full-width. Maintain card radius and padding but reduce inner padding to ~16-20px on mobile."
+}
