@@ -1,12 +1,11 @@
-import { Container } from '@/components/layout'
 import { CaptureBar, DarkHeroFrame, DisplayHeadline, Divider, EyebrowLabel, PartnerLogoStrip } from '@/components/ui'
 
-/** The landing's own dark hero — inset navy frame with the exposure-scan capture bar. */
+/** The landing's own dark hero — rounded card with a small outer margin (Figma-style). */
 export function HeroExposed() {
   return (
-    <Container className="pt-6 sm:pt-8">
-      <DarkHeroFrame glow="top-right" className="px-6 pb-12 pt-14 sm:px-12 sm:pb-16 sm:pt-20 lg:px-[72px] lg:pb-16 lg:pt-[136px]">
-        <div className="max-w-[640px]">
+    <div className="px-4 pt-4 sm:px-5 sm:pt-5">
+      <DarkHeroFrame glow="top-right" className="px-6 py-10 sm:px-10 sm:py-12 lg:px-14 lg:py-14">
+        <div className="max-w-[620px]">
           <EyebrowLabel tone="lavender">PUREVPN FOR TEAMS · DARK WEB EXPOSURE SCAN</EyebrowLabel>
           <DisplayHeadline className="mt-5 leading-[52px]">
             See what's exposed.
@@ -20,7 +19,7 @@ export function HeroExposed() {
             attack-surface intelligence into one scan — so you spot threats early and act faster.
           </p>
           <CaptureBar
-            className="mt-9 max-w-[560px]"
+            className="mt-8 max-w-[560px]"
             tone="dark"
             ctaVariant="gradient"
             cta="Free Check"
@@ -28,12 +27,12 @@ export function HeroExposed() {
           />
         </div>
 
-        <div className="mt-20 sm:mt-24 lg:mt-28">
+        <div className="mt-12 lg:mt-14">
           <p className="text-xs font-bold uppercase tracking-[0.08em] text-lav-4">Trusted by 5000+ teams</p>
           <Divider tone="dark" className="mt-5" />
           <PartnerLogoStrip className="mt-8" />
         </div>
       </DarkHeroFrame>
-    </Container>
+    </div>
   )
 }
